@@ -1,0 +1,22 @@
+{
+  "name": "angular2-nodejs-starter",
+  "version": "1.0.0",
+  "description": "Starter application of Angular2 on Nodejs",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.38",
+    "express": "^4.13.3",
+    "systemjs": "^0.19.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tslint": "^3.3.0",
+    "gulp-typescript": "^2.9.2"
+  }
+}
