@@ -1,20 +1,27 @@
-	/// <reference path="../typings/angular2/angular2.d.ts" />
+/// <reference path="../typings/angular2/angular2.d.ts" />
+/// <reference path="../typings/angular2/router.d.ts" />
 
-import { Component, View, bootstrap } from "angular2/angular2";
+import { Component, View, bootstrap, bind } from "angular2/angular2";
+import { routerBindings, RouterOutlet, LocationStrategy, RouteConfig, HashLocationStrategy } from "angular2/router";
+import { ItemComponent } from "./components/item";
+import { HomeComponent } from "./components/home";
 
 @Component({
-	selector : "home"
+	selector : "app"
 })
 @View({
-	directives: [],
-	template: "<img src='https://angular.io/resources/images/logos/standard/shield-large.png'><h1>Zdravo svete!</h1>"
+	directives: [RouterOutlet],
+	template: "<router-outlet></router-outlet>"
 })
+@RouteConfig([
+	{ component: HomeComponent, path: "/" },
+	{ component: ItemComponent, path: "/item" }
+])
 
-export class HomeComponent {
+export class AppComponent {}
 
-	constructor() {
-		console.log("Constructor");
-	}
-}
 
-bootstrap(HomeComponent);
+bootstrap(AppComponent, [
+	routerBindings(AppComponent),
+	bind(LocationStrategy).toClass(HashLocationStrategy)
+]);
