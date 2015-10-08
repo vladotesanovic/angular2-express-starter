@@ -5,7 +5,7 @@ import { Pipe } from "angular2/angular2";
 @Pipe({
 	name: "debug"
 })
-export class DebugView {
+export class DebugPipe {
 
 	/**
 	 * Export any variable to console

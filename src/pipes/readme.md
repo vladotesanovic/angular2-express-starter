@@ -2,7 +2,7 @@
 
 Export any variable to console with this Pipe.
 
-Isage:
+Usage:
 
 ```bash
 
@@ -10,3 +10,8 @@ Isage:
 {{dataArray|debug:"Information"}}
 
 ```
+
+Installation:
+* Copy debug.ts to your pipes folder
+* Reference it in component
+* Attach it @View with pipes: [DebugPipe]

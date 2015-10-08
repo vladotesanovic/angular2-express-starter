@@ -20,7 +20,6 @@ import { HomeComponent } from "./components/home";
 
 export class AppComponent {}
 
-
 bootstrap(AppComponent, [
 	routerBindings(AppComponent),
 	bind(LocationStrategy).toClass(HashLocationStrategy)
