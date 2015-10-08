@@ -3,7 +3,7 @@
 import { Component, View, FORM_DIRECTIVES } from "angular2/angular2";
 import { ChildComponent } from "../directives/child";
 
-class Info {
+class DataObject {
 	title: string;
 	date: any;
 }
@@ -17,22 +17,29 @@ class Info {
 		<img src='https://angular.io/resources/images/logos/standard/shield-large.png'>
 		<h1>Zdravo svete! <a href="#/item">Item view</a>!</h1>
 		<label> Change data ( propagate to child ):
-			<input (input)="changeLabel()" [(ng-model)]="data.title" type="text" />
+			<input (input)="changeLabel()" [(ng-model)]="array[0].title" type="text" />
 		</label>
-		<child [prop]="data"><child>
+		<child [prop]="array"><child>
 	</div>`
 })
 export class HomeComponent {
-	public data: Info;
+	public array: Array<DataObject>;
 
 	constructor() {
 
-		this.data = {
+		this.array = new Array<DataObject>();
+
+		this.array.push({
 			date: new Date().toTimeString(),
-			title: "Home Component"
-		};
+			title: "Appolo"
+		});
+		this.array.push({
+			date: new Date().toTimeString(),
+			title: "Enterprise"
+		});
 	}
 	changeLabel() {
-		this.data.date = new Date().toTimeString();
+
+		this.array[0].date = new Date().toTimeString();
 	}
 }
