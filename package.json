@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "angular2": "^2.0.0-alpha.39",
+    "angular2": "^2.0.0-alpha.40",
     "express": "^4.13.3",
     "systemjs": "^0.19.3"
   },
