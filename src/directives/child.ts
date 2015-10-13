@@ -2,8 +2,10 @@
 
 import { Component, View, NgIf, NgFor } from "angular2/angular2";
 import { DebugPipe } from "../pipes/debug";
+import { ItemService } from "../service/service";
 
 @Component({
+	bindings: [ItemService],
 	properties: ["prop"],
 	selector: "child"
 })
@@ -15,4 +17,10 @@ import { DebugPipe } from "../pipes/debug";
 	</div>`
 })
 
-export class ChildComponent {}
+export class ChildComponent {
+	constructor(public item: ItemService) {
+		item.getItem().then((data) => {
+			console.log(data);
+		});
+	}
+}
