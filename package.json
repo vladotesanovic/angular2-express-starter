@@ -9,14 +9,14 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "angular2": "^2.0.0-alpha.40",
+    "angular2": "^2.0.0-alpha.46",
     "express": "^4.13.3",
-    "systemjs": "^0.19.3"
+    "systemjs": "^0.19.6"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-tslint": "^3.3.0",
+    "gulp-tslint": "^3.6.0",
     "gulp-typescript": "^2.9.2"
   }
 }

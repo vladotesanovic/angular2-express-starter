@@ -1,5 +1,3 @@
-/// <reference path="../../typings/angular2/angular2.d.ts" />
-
 import { Component, View, FORM_DIRECTIVES } from "angular2/angular2";
 import { ChildComponent } from "../directives/child";
 
@@ -19,7 +17,9 @@ class DataObject {
 		<label> Change data ( propagate to child ):
 			<input (input)="changeLabel()" [(ng-model)]="array[0].title" type="text" />
 		</label>
-		<child [prop]="array"><child>
+		<child [prop]="array">
+			Child should see this?
+		<child>
 	</div>`
 })
 export class HomeComponent {

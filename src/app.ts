@@ -1,8 +1,5 @@
-/// <reference path="../typings/angular2/angular2.d.ts" />
-/// <reference path="../typings/angular2/router.d.ts" />
-
 import { Component, View, bootstrap, bind } from "angular2/angular2";
-import { routerBindings, RouterOutlet, LocationStrategy, RouteConfig, HashLocationStrategy } from "angular2/router";
+import { ROUTER_PROVIDERS, RouterOutlet, LocationStrategy, RouteConfig, HashLocationStrategy } from "angular2/router";
 import { ItemComponent } from "./components/item";
 import { HomeComponent } from "./components/home";
 
@@ -21,6 +18,6 @@ import { HomeComponent } from "./components/home";
 export class AppComponent {}
 
 bootstrap(AppComponent, [
-	routerBindings(AppComponent),
+	ROUTER_PROVIDERS,
 	bind(LocationStrategy).toClass(HashLocationStrategy)
 ]);

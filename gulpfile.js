@@ -5,8 +5,8 @@ var tslint = require('gulp-tslint');
 var config = require('./gulp.config')();
 var tsProject = tsc.createProject('tsconfig.json');
 
-
 // run express server for testing prupouse
+// don't use this anywhere else
 var express = require("express");
 var app = express();
 app.use(express.static("./public"));
@@ -46,5 +46,8 @@ gulp.task('serve', ['ts-lint', 'compile-ts'], function() {
 	
 	gulp.watch([config.allTs], ['ts-lint', 'compile-ts']);	
 });
+
+// compile type script on each change in src/ folder
+gulp.watch(config.allTs, ['ts-lint', 'compile-ts']);
 
 gulp.task('default', ['serve']);
