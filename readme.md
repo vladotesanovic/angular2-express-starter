@@ -1,13 +1,13 @@
-## Angular2 Nodejs Starter
+## Angular2 Express Starter
 
 - Angular 2 beta.1
-- NodeJS express
+- Express
 - Gulp
 
 ## Install
 ```bash
-git clone https://github.com/vladotesanovic/angular2-nodejs-starter
-cd angular2-nodejs-starter
+git clone https://github.com/vladotesanovic/angular2-express-starter
+cd angular2-express-starter
 
 # Install dependencies
 npm install

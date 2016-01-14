@@ -13,7 +13,6 @@
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.13",
     "express": "^4.13.3",
-    "gulp-typescript": "^2.10.0",
     "reflect-metadata": "^0.1.3",
     "rxjs": "^5.0.0-beta.1",
     "systemjs": "^0.19.16",
@@ -23,6 +22,6 @@
     "gulp": "^3.9.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-tslint": "^3.6.0",
-    "gulp-typescript": "^2.9.2"
+    "gulp-typescript": "^2.10.0"
   }
 }
