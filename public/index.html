@@ -1,21 +1,32 @@
 <html>
     <head>
         <title>Angular2 - Nodejs starter</title>
-        <script src="system.js"></script>
+        <script src="systemjs/dist/system.js"></script>
+        <script src="angular2/bundles/angular2-polyfills.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script>
         //configure system loader
         System.config({
-            defaultJSExtensions: true
+            defaultJSExtensions: true,
+            paths: {
+                'rxjs/operators/*' : 'rxjs/operator/*.js',
+                '*': './*'
+            },
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
         });
         </script>
-        <script src="angular2.min.js"></script>
-        <script src="router.js"></script>
     </head>
 
     <body>
-        <app></app>
+        <app>
+            loading...
+        </app>
         <script>
             System.import('/js/app');
         </script>

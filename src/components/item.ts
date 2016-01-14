@@ -1,14 +1,11 @@
-import { Component, View } from "angular2/angular2";
+import { Component, View } from "angular2/core";
 
 @Component({
 	selector : "item"
 })
 @View({
 	directives: [],
-	template: `<div class="center">
-		<img src='https://angular.io/resources/images/logos/standard/shield-large.png'>
-		<h1>Zdravo svete! <a href="#/">Home view</a>!</h1>
-	</div>`
+	template: `<h1>Item view! <a href="#/">Home view</a>!</h1>`
 })
 
 export class ItemComponent {}

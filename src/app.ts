@@ -1,21 +1,26 @@
-import { Component, View, bootstrap, bind } from "angular2/angular2";
+import { Component, View, bind } from "angular2/core";
+import { bootstrap } from "angular2/platform/browser";
 import { ROUTER_PROVIDERS, RouterOutlet, LocationStrategy, RouteConfig, HashLocationStrategy } from "angular2/router";
 import { ItemComponent } from "./components/item";
 import { HomeComponent } from "./components/home";
 
 @Component({
-	selector : "app"
+	selector: "app"
 })
 @View({
 	directives: [RouterOutlet],
-	template: "<router-outlet></router-outlet>"
+	template: `
+	<div class="center">
+		<img src='https://angular.io/resources/images/logos/standard/shield-large.png'>
+		<router-outlet></router-outlet>
+	</div>`
 })
 @RouteConfig([
 	{ component: HomeComponent, path: "/" },
 	{ component: ItemComponent, path: "/item" }
 ])
 
-export class AppComponent {}
+export class AppComponent { }
 
 bootstrap(AppComponent, [
 	ROUTER_PROVIDERS,
