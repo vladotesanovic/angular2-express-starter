@@ -3,7 +3,9 @@
         <title>Angular2 - Nodejs starter</title>
         <script src="systemjs/dist/system.js"></script>
         <script src="angular2/bundles/angular2-polyfills.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script>
         //configure system loader
@@ -11,6 +13,7 @@
             defaultJSExtensions: true,
             paths: {
                 'rxjs/operators/*' : 'rxjs/operator/*.js',
+                'semantic/*' : 'semantic/dist/components/*.js',
                 '*': './*'
             },
             packages: {
