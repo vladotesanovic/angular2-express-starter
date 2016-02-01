@@ -5,14 +5,6 @@ var tslint = require('gulp-tslint');
 var config = require('./gulp.config')();
 var tsProject = tsc.createProject('tsconfig.json');
 
-// simple express initialization
-// don't use this in production
-var express = require("express");
-var app = express();
-app.use(express.static("./public"));
-app.use(express.static("./node_modules/"));
-app.listen(5000);
-
 gulp.task('ts-lint', function() {
 
 	return gulp
