@@ -1,7 +1,7 @@
 import { Component, View, bind } from "angular2/core";
+import { HTTP_PROVIDERS } from "angular2/http";
 import { bootstrap } from "angular2/platform/browser";
 import { ROUTER_PROVIDERS, RouterOutlet, LocationStrategy, RouteConfig, HashLocationStrategy } from "angular2/router";
-import { ItemComponent } from "./components/item";
 import { HomeComponent } from "./components/home";
 
 @Component({
@@ -12,17 +12,17 @@ import { HomeComponent } from "./components/home";
 	template: `
 	<div class="center">
 		<img src='https://angular.io/resources/images/logos/standard/shield-large.png'>
-		<router-outlet></router-outlet>
-	</div>`
+	</div>
+	<router-outlet></router-outlet>`
 })
 @RouteConfig([
-	{ component: HomeComponent, path: "/" },
-	{ component: ItemComponent, path: "/item" }
+	{ component: HomeComponent, path: "/" }
 ])
 
 export class AppComponent { }
 
 bootstrap(AppComponent, [
 	ROUTER_PROVIDERS,
+	HTTP_PROVIDERS,
 	bind(LocationStrategy).toClass(HashLocationStrategy)
 ]);

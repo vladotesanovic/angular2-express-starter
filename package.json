@@ -20,6 +20,7 @@
     "express": "^4.13.4",
     "install": "^0.4.1",
     "jade": "~1.11.0",
+    "jsonwebtoken": "^5.5.4",
     "morgan": "~1.6.1",
     "ng-semantic": "^1.0.10",
     "reflect-metadata": "^0.1.3",
