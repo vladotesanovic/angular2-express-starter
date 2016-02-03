@@ -1,7 +1,9 @@
 ## Angular2 Express Starter
 
-- Angular 2 beta.1
+- Angular 2 beta.2
 - Express
+- jwt ( JSON Web Tokens )
+- ng-semantic
 - Gulp
 
 ## Install
