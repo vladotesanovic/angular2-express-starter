@@ -6,5 +6,10 @@
         "removeComments": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true
-    }
+    },
+    "exclude": [
+        "node_modules",
+        "typings/main",
+        "typings/main.d.ts"
+    ]
 }

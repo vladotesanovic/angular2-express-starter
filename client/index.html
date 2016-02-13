@@ -1,8 +1,10 @@
 <html>
     <head>
         <title>Angular2 - Nodejs starter</title>
-        <script src="systemjs/dist/system.js"></script>
+        <script src="es6-shim/es6-shim.min.js"></script>
+        <script src="systemjs/dist/system-polyfills.js"></script>
         <script src="angular2/bundles/angular2-polyfills.min.js"></script>
+        <script src="systemjs/dist/system.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         
         <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
@@ -13,7 +15,8 @@
             defaultJSExtensions: true,
             paths: {
                 'semantic/*' : 'semantic/dist/components/*.js',
-                '*': './*'  
+                'rxjs/operator/*' : './rxjs/add/operator/*',
+                '*': './*'
             },
             packages: {
                 app: {

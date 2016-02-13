@@ -1,6 +1,7 @@
 import { Component, View } from "angular2/core";
 import { SEMANTIC_COMPONENTS, SEMANTIC_DIRECTIVES } from "ng-semantic/semantic";
 import { Http, Headers, RequestOptions } from "angular2/http";
+import "rxjs/operator/map";
 
 @Component({
 	selector: "home"
