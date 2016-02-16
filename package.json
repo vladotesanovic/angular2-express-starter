@@ -24,7 +24,6 @@
     "jade": "~1.11.0",
     "jsonwebtoken": "^5.5.4",
     "morgan": "~1.6.1",
-    "ng-semantic": "^1.0.13",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.0",
     "serve-favicon": "~2.3.0",
