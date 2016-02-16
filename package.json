@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "develop": "gulp",
-    "start": "node ./server/bin/www"
+    "start": "node ./server/bin/www",
+    "postinstall": "gulp" 
   },
   "author": "Vlado Tešanović",
   "license": "MIT",

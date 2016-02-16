@@ -14,8 +14,6 @@ cd angular2-express-starter
 # Install dependencies
 npm install
 
-# Skip Semantic UI installation ( use default settings ). Semantic is already installed in client/semantic
-
 # run gulp ( auto compiling )
 gulp or npm run develop
 
