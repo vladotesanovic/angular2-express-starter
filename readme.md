@@ -6,6 +6,8 @@
 - ng-semantic
 - Gulp
 
+Demo: https://express-angular2.herokuapp.com/
+
 ## Install
 ```bash
 git clone https://github.com/vladotesanovic/angular2-express-starter
@@ -14,12 +16,11 @@ cd angular2-express-starter
 # Install dependencies
 npm install
 
-# run gulp ( auto compiling )
-gulp or npm run develop
-
-# start server ( in different terminal )
+# start server
 npm start
 
-# Application will re-compile on each change in src/ folder
+# developing mode ( automaticly compile .ts from src folder )
+npm run watch 
+
 # Applciation url: http://localhost:3000
 ```

@@ -33,12 +33,9 @@ gulp.task('compile-ts', function() {
 });
 
 // compile each time when we change something in /src folder
-gulp.task('serve', ['ts-lint', 'compile-ts'], function() {
+gulp.task('watch', ['ts-lint', 'compile-ts'], function() {
 	
 	gulp.watch([config.allTs], ['ts-lint', 'compile-ts']);	
 });
 
-// compile type script on each change in src/ folder
-gulp.watch(config.allTs, ['ts-lint', 'compile-ts']);
-
-gulp.task('default', ['serve']);
+gulp.task('default', ['ts-lint', 'compile-ts']);
