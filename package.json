@@ -15,14 +15,9 @@
     "angular2": "^2.0.0-beta.6",
     "body-parser": "~1.13.2",
     "cookie-parser": "~1.3.5",
-    "del": "^2.2.0",
     "es6-promise": "^3.1.2",
     "es6-shim": "^0.33.13",
     "express": "^4.13.4",
-    "gulp": "^3.9.1",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-tslint": "^3.6.0",
-    "gulp-typescript": "^2.11.0",
     "jsonwebtoken": "^5.5.4",
     "morgan": "~1.6.1",
     "ng-semantic": "^1.0.15",
@@ -30,6 +25,11 @@
     "rxjs": "5.0.0-beta.0",
     "serve-favicon": "~2.3.0",
     "systemjs": "^0.19.20",
-    "zone.js": "^0.5.15"
+    "zone.js": "0.5.14",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tslint": "^3.6.0",
+    "gulp-typescript": "^2.11.0"
   }
 }

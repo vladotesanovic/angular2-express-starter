@@ -18,7 +18,7 @@ cd angular2-express-starter
 npm install
 
 # start server
-npm start
+npm run start
 
 # developing mode ( automaticly compile .ts from src folder )
 npm run watch 
