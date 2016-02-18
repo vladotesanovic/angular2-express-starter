@@ -1,12 +1,13 @@
 ## Angular2 Express Starter
 
+Demo: https://express-angular2.herokuapp.com/
+
 - Angular 2 beta.6
 - Express
 - jwt ( JSON Web Tokens )
-- ng-semantic
+- ng-semantic ( https://github.com/vladotesanovic/ngSemantic )
+- SystemJS ( loader )
 - Gulp
-
-Demo: https://express-angular2.herokuapp.com/
 
 ## Install
 ```bash
