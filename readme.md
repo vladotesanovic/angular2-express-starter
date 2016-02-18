@@ -1,6 +1,6 @@
 ## Angular2 Express Starter
 
-- Angular 2 beta.2
+- Angular 2 beta.6
 - Express
 - jwt ( JSON Web Tokens )
 - ng-semantic
