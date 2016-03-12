@@ -37,10 +37,24 @@ gulp.task('compile-ts', function() {
 		.pipe(gulp.dest(config.toOutputhPath));
 });
 
+gulp.task('copy-html', function () {
+
+    return gulp
+        .src(config.srcTemplateHTML)
+        .pipe(gulp.dest(config.toOutputhPath))
+});
+
+gulp.task('copy-css', function () {
+
+    return gulp
+        .src(config.srcTemplateCSS)
+        .pipe(gulp.dest(config.toOutputhPath))
+});
+
 // compile each time when we change something in /src folder
 gulp.task('watch', ['ts-lint', 'compile-ts'], function() {
 	
-	gulp.watch([config.allTs], ['ts-lint', 'compile-ts']);	
+	gulp.watch([config.allTs], ['ts-lint', 'compile-ts', 'copy-html', 'copy-css']);	
 });
 
-gulp.task('default', ['clean', 'ts-lint', 'compile-ts']);
+gulp.task('default', ['clean', 'ts-lint', 'compile-ts', 'copy-html', 'copy-css']);

@@ -2,7 +2,7 @@
 
 Demo: https://express-angular2.herokuapp.com/
 
-- Angular 2 beta.6
+- Angular 2 beta.9
 - Express
 - jwt ( JSON Web Tokens )
 - ng-semantic ( https://github.com/vladotesanovic/ngSemantic )
@@ -17,11 +17,8 @@ cd angular2-express-starter
 # Install dependencies
 npm install
 
-# start server
-npm run start
-
-# developing mode ( automaticly compile .ts from src folder )
-npm run watch 
+# start server ( automaticly compile .ts from src folder and watch files using gulp )
+npm start
 
 # Applciation url: http://localhost:3000
 ```
