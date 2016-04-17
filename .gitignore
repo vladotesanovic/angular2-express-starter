@@ -1,2 +1,7 @@
 node_modules
-client/js/
+public/assets/js/app
+.idea
+typings
+server/**/*.js
+server/**/*.js.map
+npm-debug.log

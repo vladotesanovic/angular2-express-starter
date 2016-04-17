@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Angular2 - Nodejs starter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="assets/css/semantic.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+        <!-- IE required polyfills, in this exact order -->
+        <script src="assets/js/es6-shim.min.js"></script>
+        <script src="assets/js/system-polyfills.js"></script>
+
+        <script src="assets/js/angular2-polyfills.min.js"></script>
+
+        <script src="assets/js/system.js"></script>
+        <script src="assets/js/Rx.js"></script>
+        <script src="assets/js/angular2.js"></script>
+        <script src="assets/js/http.js"></script>
+        <script src="assets/js/router.js"></script>
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/semantic.min.js"></script>
+        <script src="assets/js/ng-semantic.js"></script>
+
+        <!-- 2. Configure SystemJS -->
+        <script>
+            System.config({
+                packages: {
+                    "assets/js/app": {
+                        format: 'register',
+                        defaultExtension: 'js'
+                    }
+                }
+            });
+            System.import('assets/js/app/main')
+                    .then(null, console.error.bind(console));
+        </script>
+    </head>
+
+    <body>
+        <app>
+            <div class="ui active inverted dimmer">
+                <div class="ui small loader"></div>
+            </div>
+        </app>
+    </body>
+</html>

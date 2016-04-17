@@ -1,6 +1,15 @@
 {
   "ambientDependencies": {
+    "body-parser": "registry:dt/body-parser#0.0.0+20160317120654",
     "es6-shim": "github:DefinitelyTyped/DefinitelyTyped/es6-shim/es6-shim.d.ts#6697d6f7dadbf5773cb40ecda35a76027e0783b2",
-    "jasmine": "github:DefinitelyTyped/DefinitelyTyped/jasmine/jasmine.d.ts#d594ef506d1efe2fea15f8f39099d19b39436b71"
+    "express": "registry:dt/express#4.0.0+20160317120654",
+    "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160322035842",
+    "jasmine": "github:DefinitelyTyped/DefinitelyTyped/jasmine/jasmine.d.ts#d594ef506d1efe2fea15f8f39099d19b39436b71",
+    "jsonwebtoken": "registry:dt/jsonwebtoken#5.7.0+20160227192404",
+    "mime": "registry:dt/mime#0.0.0+20160316155526",
+    "morgan": "registry:dt/morgan#1.2.2+20160317120654",
+    "node": "registry:dt/node#4.0.0+20160412142033",
+    "serve-favicon": "registry:dt/serve-favicon#2.2.0+20150909053605",
+    "serve-static": "registry:dt/serve-static#1.7.1+20160104095738"
   }
 }
