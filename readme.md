@@ -17,7 +17,7 @@ cd angular2-express-starter
 npm install && npm run typings
 
 # start server
-npm develop
+npm run develop
 
 # Applciation url: http://localhost:3000
 ```
