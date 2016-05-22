@@ -23,7 +23,8 @@
     "express-jwt": "^3.3.0",
     "jsonwebtoken": "^5.5.4",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "typescript": "^1.8.10"
   },
   "devDependencies": {
     "@angular/common": "2.0.0-rc.1",
@@ -45,7 +46,6 @@
     "rxjs": "5.0.0-beta.6",
     "systemjs": "0.19.27",
     "systemjs-builder": "^0.15.17",
-    "typescript": "^1.8.10",
     "typings": "^0.8.1",
     "yargs": "^4.7.1",
     "zone.js": "^0.6.12"
