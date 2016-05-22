@@ -13,6 +13,7 @@ app.disable("x-powered-by");
 
 app.use(favicon(join(__dirname, "../public", "favicon.ico")));
 app.use(express.static(join(__dirname, '../public')));
+
 app.use(logger("dev"));
 app.use(json());
 app.use(urlencoded({ extended: true }));
@@ -21,13 +22,14 @@ app.use(urlencoded({ extended: true }));
 app.use("/api", protectedRouter);
 app.use("/login", loginRouter);
 
+app.use('/client', express.static(join(__dirname, '../client')));
+
 // error handlers
 // development error handler
 // will print stacktrace
 if (app.get("env") === "development") {
 
     app.use(express.static(join(__dirname, '../node_modules')));
-    app.use('/client', express.static(join(__dirname, '../client')));
 
     app.use(function(err, req: express.Request, res: express.Response, next: express.NextFunction) {
         res.status(err.status || 500);
