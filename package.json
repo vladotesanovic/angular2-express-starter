@@ -8,7 +8,8 @@
     "develop": "concurrently \"tsc -w -p ./server\" \"tsc -w -p ./client\" \"nodemon ./server/bin/www\" ",
     "typings": "typings install",
     "bundle": "node tools/builder.js",
-    "bundle:prod": "node tools/builder.js --prod"
+    "bundle:prod": "node tools/builder.js --prod",
+    "postinstall": "tsc -w -p ./server"
   },
   "engines": {
     "node": ">= 5.4.1 < 6"
