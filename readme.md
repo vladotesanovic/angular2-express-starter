@@ -14,7 +14,7 @@ git clone https://github.com/vladotesanovic/angular2-express-starter
 cd angular2-express-starter
 
 # Install dependencies
-npm install && npm run typings
+npm install
 
 # start server
 npm run develop
