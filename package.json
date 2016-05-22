@@ -9,7 +9,7 @@
     "typings": "typings install",
     "bundle": "node tools/builder.js",
     "bundle:prod": "node tools/builder.js --prod",
-    "postinstall": "tsc -w -p ./server"
+    "postinstall": "typings install && tsc -p ./server"
   },
   "engines": {
     "node": ">= 5.4.1 < 6"
@@ -24,6 +24,7 @@
     "jsonwebtoken": "^5.5.4",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0",
+    "typings": "^0.8.1",
     "typescript": "^1.8.10"
   },
   "devDependencies": {
@@ -46,7 +47,6 @@
     "rxjs": "5.0.0-beta.6",
     "systemjs": "0.19.27",
     "systemjs-builder": "^0.15.17",
-    "typings": "^0.8.1",
     "yargs": "^4.7.1",
     "zone.js": "^0.6.12"
   }
