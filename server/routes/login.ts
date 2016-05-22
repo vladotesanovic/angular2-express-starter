@@ -6,10 +6,11 @@ import { secret, length } from "../config";
 const loginRouter: Router = Router();
 
 const user = {
-    hashedPassword: "f5aed5349609c1fb58967325f6507fe10e9f87c7f4b1627bc35379d07df7b32ffb3" +
-    "2de67c619b77317f619047b9a71a5525e5afb2a5604b98b0c9b03326f2bbb",
-    salt: "El9tcP2hixgpzs2ZKwX0/z9Q5vq6QteRUkW1arxdLwu1KftMX9KdZ/tLQOuSdUkwXZrMJyC2/x" +
-    "Gc3a/OBiwrYFcMVlxDOt+jfbVfkfT7LB+q+h8h2O1NIIc4COsid1vCfiokVCUecIeIAlsMlvKBDWDPr67LZTLorzzkDL6pesI=",
+    hashedPassword: "97fe86e10b558f6b0de6b20a4f22fae853bcce13723451999327976a2ca6fa4e7bb554c1cc0f262f8b0caa31ca967761" +
+    "a5d283aa140e0b1388dbbcb42d58a07576564eb32cdf9e090820f17b5595a9c50f53b584089cbef4788c088e7fc6181080ec7" +
+    "310b08edd3964d1a031aa1730b9d6a5ab91efea70e16350dd92d3f6c69e",
+    salt: "joH3RgPYTAgRy/+cBbQGwy26fZE/fmzbmw2/v/DLoJWvF8QAUuzvFFTp9xcvh9BBoxB0E1E6e7bL/Gc4s+aYHCrLwYebXLMx0" +
+    "P/VRWTPqvoUe7T1JrzCBdLK5yDvb5Vl2H5oB8hCe/Gb6fLP3/fQM7CKsAQJHJYwq8aj1N7ssjI=",
     username: "john"
 };
 

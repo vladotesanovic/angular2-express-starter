@@ -1,28 +1,14 @@
 /// <reference path="../typings/browser.d.ts" />
-import { Component, provide } from "angular2/core";
-import { HTTP_PROVIDERS } from "angular2/http";
-import { bootstrap } from "angular2/platform/browser";
-import { ROUTER_PROVIDERS, RouterOutlet, LocationStrategy, RouteConfig, HashLocationStrategy } from "angular2/router";
+import { bootstrap } from '@angular/platform-browser-dynamic';
+import { provide, Type } from "@angular/core";
+import { HashLocationStrategy, LocationStrategy } from "@angular/common";
+import { HTTP_PROVIDERS } from "@angular/http";
+import { ROUTER_PROVIDERS } from '@angular/router';
 
-import { HomeComponent } from "./components/home";
+import { AppComponent } from "./components/app.component";
 
-@Component({
-	directives: [RouterOutlet],
-	selector: "app",
-	template: `
-	<div class="center">
-		<img src='https://angular.io/resources/images/logos/standard/shield-large.png'>
-	</div>
-	<router-outlet></router-outlet>`
-})
-@RouteConfig([
-	{ component: HomeComponent, path: "/" }
-])
-
-class AppComponent { }
-
-bootstrap(AppComponent, [
+bootstrap(<Type>AppComponent, [
 	ROUTER_PROVIDERS,
 	HTTP_PROVIDERS,
-	provide(LocationStrategy, { useClass: HashLocationStrategy })
+	provide(LocationStrategy, {useClass: <Type>HashLocationStrategy})
 ]);

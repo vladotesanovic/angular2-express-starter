@@ -4,7 +4,6 @@
         "module": "system",
         "moduleResolution": "node",
         "sourceRoot": "./client",
-        "outDir": "../public/assets/js/app",
         "sourceMap": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,

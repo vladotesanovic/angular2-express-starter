@@ -1,13 +1,12 @@
-import { Component } from "angular2/core";
-import { SEMANTIC_COMPONENTS, SEMANTIC_DIRECTIVES } from "ng-semantic";
-import { Http, Headers, RequestOptions } from "angular2/http";
+import { Component } from "@angular/core";
+// import { SEMANTIC_COMPONENTS, SEMANTIC_DIRECTIVES } from "ng-semantic";
+import { Http, Headers, RequestOptions } from "@angular/http";
 import 'rxjs/add/operator/map'
-import { config } from "../config";
 
 @Component({
-	directives: [SEMANTIC_COMPONENTS, SEMANTIC_DIRECTIVES],
+	directives: [/* SEMANTIC_COMPONENTS, SEMANTIC_DIRECTIVES */],
 	selector: "home",
-	templateUrl: config.templateUrl +  `components/home.html`
+	templateUrl: `client/components/home/home.component.html`
 })
 export class HomeComponent {
 	response: any;
@@ -35,8 +34,8 @@ export class HomeComponent {
 	}
 	call() {
 
-		delete this.error;
-		delete this.data;
+		this.error = undefined;
+		this.data = undefined;
 
 		this.http.get("/api", new RequestOptions({
 			headers: new Headers({"Auth": localStorage.getItem("jwt"), "Content-Type": "application/json"})
@@ -58,12 +57,12 @@ export class HomeComponent {
 			.map((res: any) => res.json())
 			.subscribe(
 				(res: any) => {
-					delete this.error;
+					this.error = undefined;
 					this.data = {
 						text: "You can call protected api now",
 						title: "Login succesfull"
 					};
-
+			
 					localStorage.setItem("jwt", res.jwt);
 				},
 				(error: any) => {
@@ -73,7 +72,7 @@ export class HomeComponent {
 	}
 	remove() {
 		this.error = { message: "JWT removed" };
-		delete this.data;
+		this.data = undefined;
 		localStorage.removeItem("jwt");
 	}
 }

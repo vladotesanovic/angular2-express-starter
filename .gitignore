@@ -1,7 +1,7 @@
 node_modules
-public/assets/js/app
 .idea
 typings
 server/**/*.js
 server/**/*.js.map
-npm-debug.log
+client/**/*.js
+client/**/*.js.map
