@@ -41,7 +41,7 @@ loginRouter.post("/", function (req: Request, res: Response, next) {
         // check if password is active
         if (hash.toString("hex") === user.hashedPassword) {
 
-            const token = sign(user.username, secret, {expiresInMinutes: 60 * 60 * 8 * 7 * 15});
+            const token = sign(user.username, secret, { expiresIn: "7d" });
             res.json({"jwt": token});
 
         } else {

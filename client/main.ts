@@ -1,9 +1,11 @@
-/// <reference path="../typings/browser.d.ts" />
+/// <reference path="../typings/index.d.ts" />
 import { bootstrap } from '@angular/platform-browser-dynamic';
-import { provide, Type } from "@angular/core";
+import { provide, Type, enableProdMode } from "@angular/core";
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 import { HTTP_PROVIDERS } from "@angular/http";
 import { ROUTER_PROVIDERS } from '@angular/router';
+
+enableProdMode();
 
 import { AppComponent } from "./components/app.component";
 

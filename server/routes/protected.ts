@@ -6,10 +6,9 @@ const protectedRouter: Router = Router();
 
 protectedRouter.use(function(req: any, res: Response, next) {
     const token = req.headers.auth;
-    console.log(token);
     verify(token, secret, function(tokenError) {
         if (tokenError) {
-            return res.status(500).json({
+            return res.status(403).json({
                 message: "Invalid token, please Log in first"
             });
         }

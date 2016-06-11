@@ -1,15 +1,16 @@
 {
-  "ambientDependencies": {
+  "globalDependencies": {
     "body-parser": "registry:dt/body-parser#0.0.0+20160317120654",
-    "express": "registry:dt/express#4.0.0+20160317120654",
-    "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160322035842",
-    "jsonwebtoken": "registry:dt/jsonwebtoken#5.7.0+20160227192404",
-    "mime": "registry:dt/mime#0.0.0+20160316155526",
-    "morgan": "registry:dt/morgan#1.2.2+20160317120654",
-    "serve-favicon": "registry:dt/serve-favicon#2.2.0+20150909053605",
-    "serve-static": "registry:dt/serve-static#1.7.1+20160104095738",
     "core-js": "registry:dt/core-js#0.0.0+20160317120654",
-    "jasmine": "registry:dt/jasmine#2.2.0+20160412134438",
-    "node": "registry:dt/node#4.0.0+20160509154515"
+    "express": "registry:dt/express#4.0.0+20160317120654",
+    "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160602151406",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160505161446",
+    "mime": "registry:dt/mime#0.0.0+20160316155526",
+    "node": "registry:dt/node#4.0.0+20160509154515",
+    "serve-favicon": "registry:dt/serve-favicon#0.0.0+20160316155526",
+    "serve-static": "registry:dt/serve-static#0.0.0+20160606155157"
+  },
+  "dependencies": {
+    "jsonwebtoken": "registry:npm/jsonwebtoken#5.5.4+20160208220328"
   }
 }

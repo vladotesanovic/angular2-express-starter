@@ -5,3 +5,4 @@ server/**/*.js
 server/**/*.js.map
 client/**/*.js
 client/**/*.js.map
+/npm-debug.log
