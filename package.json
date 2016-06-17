@@ -6,6 +6,8 @@
   "private": true,
   "scripts": {
     "develop": "concurrently \"tsc -w -p ./server\" \"tsc -w -p ./client\" \"nodemon ./server/bin/www\" ",
+    "twc:client:w": "tsc -w -p ./client",
+    "twc:server:w": "tsc -w -p ./server",
     "typings": "typings install",
     "bundle": "node tools/builder.js",
     "bundle:prod": "node tools/builder.js --prod",
@@ -24,7 +26,7 @@
     "jsonwebtoken": "^5.7.0",
     "serve-favicon": "~2.3.0",
     "typescript": "^1.8.10",
-    "typings": "^1.0.5"
+    "typings": "^1.3.0"
   },
   "devDependencies": {
     "@angular/common": "2.0.0-rc.2",
@@ -33,7 +35,7 @@
     "@angular/http": "2.0.0-rc.2",
     "@angular/platform-browser": "2.0.0-rc.2",
     "@angular/platform-browser-dynamic": "2.0.0-rc.2",
-    "@angular/router": "2.0.0-rc.2",
+    "@angular/router": "^3.0.0-alpha.7",
     "@angular/router-deprecated": "2.0.0-rc.2",
     "@angular/upgrade": "2.0.0-rc.2",
     "angular2-in-memory-web-api": "0.0.12",

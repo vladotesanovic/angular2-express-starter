@@ -1,12 +1,12 @@
 {
   "globalDependencies": {
     "body-parser": "registry:dt/body-parser#0.0.0+20160317120654",
-    "core-js": "registry:dt/core-js#0.0.0+20160317120654",
+    "core-js": "registry:dt/core-js#0.0.0+20160602141332",
     "express": "registry:dt/express#4.0.0+20160317120654",
     "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160602151406",
     "jasmine": "registry:dt/jasmine#2.2.0+20160505161446",
+    "node": "registry:dt/node#6.0.0+20160613154055",
     "mime": "registry:dt/mime#0.0.0+20160316155526",
-    "node": "registry:dt/node#4.0.0+20160509154515",
     "serve-favicon": "registry:dt/serve-favicon#0.0.0+20160316155526",
     "serve-static": "registry:dt/serve-static#0.0.0+20160606155157"
   },
