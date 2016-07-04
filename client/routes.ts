@@ -6,7 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
 
 const routes: RouterConfig = [
-    { path: '', component: <Type>HomeComponent, terminal: true },
+    { path: '', component: <Type>HomeComponent },
     { path: 'contact', component: <Type>ContactComponent }
 ];
 
