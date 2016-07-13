@@ -1,15 +1,18 @@
 import { Component } from "@angular/core";
 import { SEMANTIC_COMPONENTS, SEMANTIC_DIRECTIVES } from "ng-semantic";
 import { Http, Headers, RequestOptions } from "@angular/http";
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
+import { GOOGLE_MAPS_DIRECTIVES } from 'angular2-google-maps/core';
 
 @Component({
-	directives: [SEMANTIC_COMPONENTS, SEMANTIC_DIRECTIVES],
+	directives: [SEMANTIC_COMPONENTS, SEMANTIC_DIRECTIVES, GOOGLE_MAPS_DIRECTIVES],
 	selector: "home",
 	templateUrl: `client/components/home/home.component.html`
 })
 export class HomeComponent {
 	response: any;
+	lat: number = 51.678418;
+	lng: number = 7.809007;
 	data: any;
 	error: any;
 	user: any = {
@@ -62,7 +65,7 @@ export class HomeComponent {
 						text: "You can call protected api now",
 						title: "Login succesfull"
 					};
-			
+
 					localStorage.setItem("jwt", res.jwt);
 				},
 				(error: any) => {
