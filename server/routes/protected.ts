@@ -1,14 +1,15 @@
-import { Router, Response } from "express";
+import { Router, Response, Request, NextFunction } from "express";
 import { verify } from "jsonwebtoken";
 import { secret } from "../config";
 
 const protectedRouter: Router = Router();
 
-protectedRouter.use(function(req: any, res: Response, next) {
-    const token = req.headers.auth;
+protectedRouter.use((request: Request & { headers: { auth: string } }, response: Response, next: NextFunction) => {
+    const token = request.headers.auth;
+
     verify(token, secret, function(tokenError) {
         if (tokenError) {
-            return res.status(403).json({
+            return response.status(403).json({
                 message: "Invalid token, please Log in first"
             });
         }
@@ -17,14 +18,14 @@ protectedRouter.use(function(req: any, res: Response, next) {
     });
 });
 
-protectedRouter.get("/", function(req, res) {
-    res.json({
+protectedRouter.get("/", (request: Request, response: Response) => {
+    response.json({
         text: "Greetings, you have valid token.",
         title: "Protected call"
     });
 });
 
-export {protectedRouter}
+export { protectedRouter }
 
 
 
