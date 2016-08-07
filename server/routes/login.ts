@@ -1,4 +1,4 @@
-import { Router, Request, Response } from "express";
+import { Router, Request, Response, NextFunction } from "express";
 import { randomBytes, pbkdf2 } from "crypto";
 import { sign } from "jsonwebtoken";
 import { secret, length } from "../config";
@@ -14,16 +14,16 @@ const user = {
     username: "john"
 };
 
-loginRouter.post("/signup", function (req: Request, res: Response, next) {
-    if (!req.body.hasOwnProperty("password")) {
+loginRouter.post("/signup", function (request: Request, response: Response, next: NextFunction) {
+    if (!request.body.hasOwnProperty("password")) {
         let err = new Error("No password");
         return next(err);
     }
 
     const salt = randomBytes(128).toString("base64");
 
-    pbkdf2(req.body.password, salt, 10000, length, function (err, hash) {
-        res.json({
+    pbkdf2(request.body.password, salt, 10000, length, function (err, hash) {
+        response.json({
             hashed: hash.toString("hex"),
             salt: salt
         });
@@ -31,21 +31,21 @@ loginRouter.post("/signup", function (req: Request, res: Response, next) {
 });
 
 // login method
-loginRouter.post("/", function (req: Request, res: Response, next) {
+loginRouter.post("/", function (request: Request, response: Response, next: NextFunction) {
 
-    pbkdf2(req.body.password, user.salt, 10000, length, function (err, hash) {
+    pbkdf2(request.body.password, user.salt, 10000, length, function (err, hash) {
         if (err) {
             console.log(err);
         }
-        
+
         // check if password is active
         if (hash.toString("hex") === user.hashedPassword) {
 
             const token = sign(user.username, secret, { expiresIn: "7d" });
-            res.json({"jwt": token});
+            response.json({"jwt": token});
 
         } else {
-            res.json({message: "Wrong password"});
+            response.json({message: "Wrong password"});
         }
 
     });
