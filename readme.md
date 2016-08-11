@@ -2,7 +2,7 @@
 
 Demo: https://express-angular2.herokuapp.com/
 
-- Angular 2 rc.4
+- Angular 2 rc.5
 - Express
 - jwt ( JSON Web Tokens )
 - ng-semantic ( https://github.com/vladotesanovic/ngSemantic )

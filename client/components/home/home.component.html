@@ -1,9 +1,9 @@
 <div class="ui container">
 	<sm-segment class="raised">
 		<h1>Angular 2 and Express authentication with JWT!</h1>
-		<sm-list class="ui list bulleted">
-			<sm-item class="item">username: {{user.username}}</sm-item>
-			<sm-item class="item">password: {{user.password}}</sm-item>
+		<sm-list class="bulleted">
+			<sm-item>username: {{user.username}}</sm-item>
+			<sm-item>password: {{user.password}}</sm-item>
 		</sm-list>
 		<p>
 			Hardcoded data used for login and signup functionality.
@@ -22,9 +22,9 @@
 
 	<!-- Signup response -->
 	<sm-segment style="word-wrap: break-word;" *ngIf="response" class="raised">
-		<sm-list class="ui list bulleted">
-			<sm-item class="item">hashed: {{response?.hashed}}</sm-item>
-			<sm-item class="item">salt: {{response?.salt}}</sm-item>
+		<sm-list class="bulleted">
+			<sm-item>hashed: {{response?.hashed}}</sm-item>
+			<sm-item>salt: {{response?.salt}}</sm-item>
 		</sm-list>
 	</sm-segment>
 
@@ -34,7 +34,7 @@
 	</sm-segment>
 
 	<sm-segment *ngIf="data" class="inverted green">
-		<sm-item class="item">{{data?.title}}</sm-item>
-		<sm-item class="item">{{data?.text}}</sm-item>
+		<sm-item>{{data?.title}}</sm-item>
+		<sm-item>{{data?.text}}</sm-item>
 	</sm-segment>
 </div>

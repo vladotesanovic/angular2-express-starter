@@ -37,9 +37,11 @@ export class HomeComponent {
 		this.error = undefined;
 		this.data = undefined;
 
-		this.http.get("/api", new RequestOptions({
-			headers: new Headers({"Auth": localStorage.getItem("jwt"), "Content-Type": "application/json"})
-		}))
+		var headers: Headers = new Headers();
+		headers.append('Auth', localStorage.getItem("jwt"));
+		headers.append('Content-Ty', "application/json");
+
+		this.http.get("/api", new RequestOptions({ headers }))
 			.map((data: any) => data.json())
 			.subscribe(
 				data => {
