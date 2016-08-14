@@ -1,13 +1,12 @@
 import { Component } from "@angular/core";
-import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
-    directives: [ROUTER_DIRECTIVES],
     selector: "app",
     template: `<div class="ui container">
         <div class="center">
             <img src='https://angular.io/resources/images/logos/standard/shield-large.png'>
         </div>
+        <hello [name]="appName"></hello>
         <router-outlet></router-outlet>
         <nav class="ui menu inverted teal">
             <a [routerLink]="['/']" class="item">Home</a>
@@ -15,4 +14,6 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
         </nav>
       </div>`
 })
-export class AppComponent {}
+export class AppComponent {
+    appName: string = "Angular 2 Express"
+}

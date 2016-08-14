@@ -12,14 +12,18 @@ var isPublic = typeof window != "undefined";
         '@angular/router':            (isPublic)? '@angular/router' : 'node_modules/@angular/router',
         'angular2-in-memory-web-api': (isPublic)? 'angular2-in-memory-web-api' : 'node_modules/angular2-in-memory-web-api',
         'rxjs':                       (isPublic)? 'rxjs' : 'node_modules/rxjs',
-        'ng-semantic':                (isPublic)? 'ng-semantic' : 'node_modules/ng-semantic'
+        'ng-semantic':                (isPublic)? 'ng-semantic' : 'node_modules/ng-semantic',
+        'angularfire2':               (isPublic)? 'angularfire2' : 'node_modules/angularfire2',
+        'firebase':                   (isPublic)? 'firebase' : 'node_modules/firebase'
     };
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
         'app':                        { main: 'main.js',  defaultExtension: 'js' },
         'rxjs':                       { defaultExtension: 'js' },
-        'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' }, 
-        'ng-semantic':                { main: 'ng-semantic', defaultExtension: 'js' }
+        'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
+        'ng-semantic':                { main: 'ng-semantic', defaultExtension: 'js' },
+        'angularfire2':               { main: 'angularfire2.js', defaultExtension: 'js' },
+        'firebase':                   { main: 'firebase.js', defaultExtension: 'js' }
     };
     var ngPackageNames = [
         'common',
