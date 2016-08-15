@@ -4,11 +4,10 @@
     "core-js": "registry:dt/core-js#0.0.0+20160725163759",
     "express": "registry:dt/express#4.0.0+20160708185218",
     "express-serve-static-core": "registry:dt/express-serve-static-core#4.0.0+20160805091045",
-    "firebase3": "file:node_modules/angularfire2/firebase3.d.ts",
     "jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
     "jsonwebtoken": "registry:dt/jsonwebtoken#0.0.0+20160720062725",
     "mime": "registry:dt/mime#0.0.0+20160316155526",
-    "node": "registry:dt/node#6.0.0+20160807145350",
+    "node": "registry:dt/node#6.0.0+20160813124416",
     "serve-favicon": "registry:dt/serve-favicon#0.0.0+20160316155526",
     "serve-static": "registry:dt/serve-static#0.0.0+20160606155157"
   }
