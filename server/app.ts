@@ -5,6 +5,7 @@ import * as favicon from "serve-favicon";
 import { json, urlencoded } from "body-parser";
 
 import { loginRouter } from "./routes/login";
+import { publicRouter } from "./routes/public";
 import { protectedRouter } from "./routes/protected";
 
 const app: express.Application = express();
@@ -18,6 +19,7 @@ app.use(urlencoded({ extended: true }));
 
 // api routes
 app.use("/api", protectedRouter);
+app.use("/public", publicRouter);
 app.use("/login", loginRouter);
 
 app.use('/client', express.static(join(__dirname, '../client')));
