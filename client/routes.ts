@@ -1,11 +1,9 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './components/home/home.component';
-import { ContactComponent } from './components/contact/contact.component';
-
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'contact', component: ContactComponent }
+    { path: '', redirectTo: 'contact', pathMatch: 'full' },
+    { path: 'contact', loadChildren: 'client/modules/contact/contact.module#ContactModule' },
+    { path: 'home', loadChildren: 'client/modules/home/home.module#HomeModule' }
 ];
 
 export const routing = RouterModule.forRoot(routes, { useHash: true });
