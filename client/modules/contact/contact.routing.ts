@@ -6,4 +6,4 @@ export const routes: Routes = [
     { path: '', component: ContactComponent }
 ];
 
-export const routing = RouterModule.forRoot(routes, { useHash: true });
+export const routing = RouterModule.forChild(routes);
