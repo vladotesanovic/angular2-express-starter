@@ -7,8 +7,11 @@ import { Component } from "@angular/core";
             <img src='https://angular.io/resources/images/logos/standard/shield-large.png'>
         </div>
         <hello [name]="appName"></hello>
+        
         <div class="ui divider"></div>
+        
         <router-outlet></router-outlet>
+        
         <nav class="ui menu inverted teal">
             <a routerLink="home" class="item">Home</a>
             <a routerLink="contact" class="item">Contact Me</a>

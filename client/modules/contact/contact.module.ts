@@ -4,6 +4,7 @@ import { HttpModule } from "@angular/http";
 import { ContactComponent } from "./home/home.component";
 import { routing } from "./contact.routing";
 import { SharedModule } from "../shared/shared.module";
+import { FormComponent } from "./form/form.component";
 
 @NgModule({
     imports: [
@@ -12,7 +13,7 @@ import { SharedModule } from "../shared/shared.module";
         routing,
         SharedModule.forRoot()
     ],
-    declarations: [ ContactComponent ],
+    declarations: [ ContactComponent, FormComponent ],
     bootstrap:    [ ContactComponent ]
 })
 export class ContactModule { }
