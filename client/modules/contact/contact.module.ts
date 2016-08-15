@@ -5,6 +5,7 @@ import { ContactComponent } from "./home/home.component";
 import { routing } from "./contact.routing";
 import { SharedModule } from "../shared/shared.module";
 import { FormComponent } from "./form/form.component";
+import { ProfileComponent } from "./profile/profile.component";
 
 @NgModule({
     imports: [
@@ -13,7 +14,8 @@ import { FormComponent } from "./form/form.component";
         routing,
         SharedModule.forRoot()
     ],
-    declarations: [ ContactComponent, FormComponent ],
+    exports: [ ProfileComponent ],
+    declarations: [ ContactComponent, FormComponent, ProfileComponent ],
     bootstrap:    [ ContactComponent ]
 })
 export class ContactModule { }
