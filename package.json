@@ -26,7 +26,8 @@
     "jsonwebtoken": "^5.7.0",
     "serve-favicon": "~2.3.0",
     "typescript": "next",
-    "typings": "^1.3.1"
+    "typings": "^1.3.1",
+	"debug": "^2.2.0"
   },
   "devDependencies": {
     "@angular/common": "2.0.0-rc.5",
