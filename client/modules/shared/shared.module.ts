@@ -2,12 +2,10 @@ import { NgModule,
     ModuleWithProviders } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
-import { SEMANTIC_COMPONENTS, SEMANTIC_DIRECTIVES } from "ng-semantic";
-
 @NgModule({
     imports:      [ CommonModule ],
-    declarations: [ SEMANTIC_COMPONENTS, SEMANTIC_DIRECTIVES ],
-    exports:      [ SEMANTIC_COMPONENTS, SEMANTIC_DIRECTIVES ]
+    declarations: [ /* Declare components and pipes */],
+    exports:      [ /* Export them */ ]
 })
 export class SharedModule {
 
