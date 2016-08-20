@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from "@angular/http";
-import { HomeComponent } from "./home.component";
+import { HomeComponent } from "./home/home.component";
 import { routing } from "./home.routing";
 import { SharedModule } from "../shared/shared.module";
-import { ContactModule } from "../contact/contact.module";
+import { AppComponent } from "./app.component";
 
 @NgModule({
     imports: [
         BrowserModule,
         HttpModule,
         routing,
-        SharedModule.forRoot(),
-        ContactModule
+        SharedModule.forRoot()
     ],
-    declarations: [ HomeComponent ],
+    declarations: [ HomeComponent, AppComponent ],
     bootstrap:    [ HomeComponent ]
 })
-export class HomeModule { }
+export class HomeModule {}

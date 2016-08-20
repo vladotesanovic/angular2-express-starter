@@ -1,9 +1,9 @@
 import { Component } from "@angular/core";
-import { AuthHttp } from "angular2-jwt";
+import { ApiService } from "../../../service/api.service";
 
 @Component({
     selector: "home",
-    templateUrl: `client/modules/home/home.component.html`
+    templateUrl: `client/modules/home/home/home.component.html`
 })
 export class HomeComponent {
     response: {
@@ -11,10 +11,9 @@ export class HomeComponent {
         title: string;
     };
 
-    constructor(public authHttp: AuthHttp) {
+    constructor(public authHttp: ApiService) {
         authHttp
             .get("/public")
-            .map((data) => data.json())
             .subscribe((data) => this.response = data);
     }
 }

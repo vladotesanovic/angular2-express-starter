@@ -6,6 +6,7 @@ import { Http, HttpModule } from "@angular/http";
 import { AppComponent }  from './app.component';
 import { routing } from "./routes";
 import { HelloComponent } from "./components/shared/hello.component";
+import { ApiService } from "./service/api.service";
 
 @NgModule({
     imports: [
@@ -14,6 +15,7 @@ import { HelloComponent } from "./components/shared/hello.component";
         routing
     ],
     providers: [
+        ApiService,
         {
             provide: AuthHttp,
             useFactory: (http) => {
