@@ -19,7 +19,7 @@ npm install
 # start server
 npm run develop
 
-# Applciation url: http://localhost:3000
+# Application url: http://localhost:3000
 ```
 
 ## Development
