@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AuthHttp, AuthConfig } from "angular2-jwt";
-import { Http, HttpModule } from "@angular/http";
+import { AuthConfig, provideAuth } from "angular2-jwt";
+import { HttpModule } from "@angular/http";
 
 import { AppComponent }  from './app.component';
 import { routing } from "./routes";
@@ -16,17 +16,16 @@ import { ApiService } from "./service/api.service";
     ],
     providers: [
         ApiService,
-        {
-            provide: AuthHttp,
-            useFactory: (http) => {
-                return new AuthHttp(new AuthConfig({
-                    noJwtError: true
-                }), http);
-            },
-            deps: [Http]
-        }
+        provideAuth(new AuthConfig({
+            noJwtError: true
+        }))
     ],
-    declarations: [ HelloComponent, AppComponent ],
-    bootstrap:    [ AppComponent ]
+    declarations: [
+        HelloComponent,
+        AppComponent
+    ],
+    bootstrap: [
+        AppComponent
+    ]
 })
 export class AppModule { }
