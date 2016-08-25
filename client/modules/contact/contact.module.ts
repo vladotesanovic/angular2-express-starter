@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from "@angular/http";
 import { NgSemanticModule } from "ng-semantic";
 
@@ -11,7 +10,6 @@ import { ProfileComponent } from "./profile/profile.component";
 
 @NgModule({
     imports: [
-        BrowserModule,
         HttpModule,
         NgSemanticModule,
         routing,
