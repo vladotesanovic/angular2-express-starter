@@ -12,6 +12,7 @@ var isPublic = typeof window != "undefined";
         '@angular/router':            (isPublic)? '@angular/router' : 'node_modules/@angular/router',
         'angular2-in-memory-web-api': (isPublic)? 'angular2-in-memory-web-api' : 'node_modules/angular2-in-memory-web-api',
         'rxjs':                       (isPublic)? 'rxjs' : 'node_modules/rxjs',
+        'angular2-jwt':               (isPublic)? 'angular2-jwt/angular2-jwt.js' : 'node_modules/angular2-jwt/angular2-jwt.js',
         'ng-semantic':                (isPublic)? 'ng-semantic' : 'node_modules/ng-semantic'
     };
     // packages tells the System loader how to load when no filename and/or no extension

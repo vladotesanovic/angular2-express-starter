@@ -4,8 +4,8 @@ import { secret } from "../config";
 
 const protectedRouter: Router = Router();
 
-protectedRouter.use((request: Request & { headers: { auth: string } }, response: Response, next: NextFunction) => {
-    const token = request.headers.auth;
+protectedRouter.use((request: Request & { headers: { authorization: string } }, response: Response, next: NextFunction) => {
+    const token = request.headers.authorization;
 
     verify(token, secret, function(tokenError) {
         if (tokenError) {
