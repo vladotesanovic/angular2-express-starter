@@ -28,6 +28,7 @@ app.use('/client', express.static(join(__dirname, '../client')));
 if (app.get("env") === "development") {
 
     app.use(express.static(join(__dirname, '../node_modules')));
+    app.use(express.static(join(__dirname, '../tools')));
 
     app.use(function(err, req: express.Request, res: express.Response, next: express.NextFunction) {
         res.status(err.status || 500);
