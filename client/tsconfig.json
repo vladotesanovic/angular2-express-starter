@@ -3,7 +3,6 @@
         "target": "es5",
         "module": "system",
         "moduleResolution": "node",
-        "sourceRoot": "./client",
         "sourceMap": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
@@ -11,8 +10,6 @@
         "noImplicitAny": false
     },
     "exclude": [
-        "../node_modules",
-        "../typings/main",
-        "../typings/main.d.ts"
+        "../node_modules"
     ]
 }
