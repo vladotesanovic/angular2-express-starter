@@ -2,7 +2,7 @@
   "name": "angular2-express-starter",
   "version": "1.0.0",
   "description": "Starter application of Angular2 on Express",
-  "main": "gulpfile.js",
+  "main": "server/app.js",
   "private": true,
   "scripts": {
     "develop": "concurrently \"tsc -w -p ./server\" \"tsc -w -p ./client\" \"nodemon ./server/bin/www\" ",
