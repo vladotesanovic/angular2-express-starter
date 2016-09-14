@@ -7,7 +7,7 @@ builder.loadConfig('./tools/systemjs.config.js')
         var outputFile = argv.prod ? './public/assets/js/bundle.min.js' : './public/assets/js/bundle.js';
         return builder.buildStatic('app', outputFile, {
             minify: argv.prod,
-            mangle: false, // disabled because Angular RC.5 bug
+            mangle: argv.prod,
             rollup: argv.prod
         });
     })
