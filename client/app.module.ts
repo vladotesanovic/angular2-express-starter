@@ -32,4 +32,4 @@ import { HomeModule } from "./modules/home/home.module";
         CUSTOM_ELEMENTS_SCHEMA
     ]
 })
-export class AppModule { }
+export class AppModule {}
