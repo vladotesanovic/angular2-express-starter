@@ -1,7 +1,7 @@
 import { Router, Request, Response, NextFunction } from "express";
 import { randomBytes, pbkdf2 } from "crypto";
 import { sign } from "jsonwebtoken";
-import { secret, length } from "../config";
+import { secret, length, digest } from "../config";
 
 const loginRouter: Router = Router();
 
@@ -22,7 +22,7 @@ loginRouter.post("/signup", function (request: Request, response: Response, next
 
     const salt = randomBytes(128).toString("base64");
 
-    pbkdf2(request.body.password, salt, 10000, length, function (err, hash) {
+    pbkdf2(request.body.password, salt, 10000, length, digest, (err: Error, hash: Buffer) => {
         response.json({
             hashed: hash.toString("hex"),
             salt: salt
@@ -33,7 +33,7 @@ loginRouter.post("/signup", function (request: Request, response: Response, next
 // login method
 loginRouter.post("/", function (request: Request, response: Response, next: NextFunction) {
 
-    pbkdf2(request.body.password, user.salt, 10000, length, function (err, hash) {
+    pbkdf2(request.body.password, user.salt, 10000, length, digest, (err: Error, hash: Buffer) => {
         if (err) {
             console.log(err);
         }
