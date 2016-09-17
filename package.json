@@ -14,7 +14,7 @@
     "postinstall": "typings install && tsc -p ./server"
   },
   "engines": {
-    "node": ">= 5.4.1 < 6"
+    "node": ">= 5.4.1"
   },
   "author": "Vlado Tešanović",
   "license": "MIT",
