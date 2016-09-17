@@ -6,11 +6,10 @@ import { secret, length, digest } from "../config";
 const loginRouter: Router = Router();
 
 const user = {
-    hashedPassword: "97fe86e10b558f6b0de6b20a4f22fae853bcce13723451999327976a2ca6fa4e7bb554c1cc0f262f8b0caa31ca967761" +
-    "a5d283aa140e0b1388dbbcb42d58a07576564eb32cdf9e090820f17b5595a9c50f53b584089cbef4788c088e7fc6181080ec7" +
-    "310b08edd3964d1a031aa1730b9d6a5ab91efea70e16350dd92d3f6c69e",
-    salt: "joH3RgPYTAgRy/+cBbQGwy26fZE/fmzbmw2/v/DLoJWvF8QAUuzvFFTp9xcvh9BBoxB0E1E6e7bL/Gc4s+aYHCrLwYebXLMx0" +
-    "P/VRWTPqvoUe7T1JrzCBdLK5yDvb5Vl2H5oB8hCe/Gb6fLP3/fQM7CKsAQJHJYwq8aj1N7ssjI=",
+    hashedPassword: "6fb3a68cb5fe34d0c2c9fc3807c8fa9bc0e7dd10023065ea4233d40a2d6bb4a7e336a82f48bcb5a7cc95b8a590cf03a4a07615a226d09a89420a342584a" +
+    "a28748336aa0feb7ac3a12200d13641c8f8e26398cfdaf268dd68746982bcf59415670655edf4e9ac30f6310bd2248cb9bc185db8059fe979294dd3611fdf28c2b731",
+    salt: "OxDZYpi9BBJUZTTaC/yuuF3Y634YZ90KjpNa+Km4qGgZXGI6vhSWW0T91rharcQWIjG2uPZEPXiKGnSAQ73s352aom56AIYpYCfk7uNsd+7AzaQ6dxTnd9AzCCdIc/J" +
+    "62JohpHPJ5eGHUJJy3PAgHYcfVzvBHnIQlTJCQdQAonQ=",
     username: "john"
 };
 

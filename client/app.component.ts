@@ -12,6 +12,7 @@ import "rxjs/add/operator/map";
         <a routerLink="contact" class="item">Contact Me</a>
         
         <nav class="menu right">
+            <a class="bottom attached fluid primary" (click)="signup()" class="item">Signup</a>
             <a (click)="myPopup.show($event, {position: 'right center'})" *ngIf="!isLogged" class="item">Login</a>
             <a (click)="logout()" *ngIf="isLogged" class="item inverted red">Logout</a>
         </nav>
@@ -25,6 +26,7 @@ import "rxjs/add/operator/map";
                 <p><b>Password</b>: angualr2express</p>
                 <p><b>Username</b>: john</p>
             </card-content>
+            
             <sm-button class="bottom attached fluid primary" *ngIf="!isLogged" (click)="login()">Login</sm-button>
             <sm-button class="bottom attached fluid red" *ngIf="isLogged" (click)="logout()">Logout</sm-button>
         </sm-card>
@@ -35,6 +37,12 @@ import "rxjs/add/operator/map";
     <div class="ui divider"></div>
     
     <router-outlet></router-outlet>
+    
+    <sm-segment *ngIf="response">
+        <div style="word-break: break-all"><b>Hashed:</b> {{response?.hashed}}</div>
+        <div class="ui divider"></div>
+        <div style="word-break: break-all"><b>Salt:</b> {{response?.salt}}</div>
+    </sm-segment>
     
     <div class="center">
         <img src='https://angular.io/resources/images/logos/standard/shield-large.png'>
@@ -48,8 +56,9 @@ export class AppComponent {
         password: "angualr2express",
         username: "john"
     };
-    response: Response;
+
     isLogged: boolean;
+    response: { hashed: string, salt: string };
     @ViewChild("myPopup") myPopup: SemanticPopupComponent;
 
     constructor(private http: Http) {
@@ -77,8 +86,8 @@ export class AppComponent {
             .subscribe(
                 (res: Response & { jwt: string }) => {
                     localStorage.setItem("id_token", res.jwt);
+                    this.isLogged = true;
                     this.myPopup.hide();
-                    location.reload();
                 },
                 (error: Error) => { console.log(error); }
             );
@@ -86,6 +95,6 @@ export class AppComponent {
 
     logout(): void {
         localStorage.removeItem("id_token");
-        location.reload();
+        this.isLogged = false;
     }
 }
