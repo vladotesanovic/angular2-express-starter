@@ -58,7 +58,7 @@ export class AppComponent {
     };
 
     isLogged: boolean;
-    response: { hashed: string, salt: string };
+    response: Response & { hashed?: string, salt?: string };
     @ViewChild("myPopup") myPopup: SemanticPopupComponent;
 
     constructor(private http: Http) {
