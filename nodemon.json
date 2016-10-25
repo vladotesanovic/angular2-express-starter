@@ -2,14 +2,13 @@
   "verbose": false,
   "ignore": [
     ".git",
-    "node_modules/**/node_modules",
-    "client"
+    "node_modules/**/node_modules"
   ],
   "execMap": {
     "js": "node"
   },
   "watch": [
-    "server/", "client/"
+    "dist/server"
   ],
   "env": {
     "NODE_ENV": "development"
