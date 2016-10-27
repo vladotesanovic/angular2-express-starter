@@ -4,20 +4,20 @@
  * Module dependencies.
  */
 
-import { app } from "../app";
-import { serverPort } from "../config";
-import * as http from "http"
+import { app } from '../app';
+import { serverPort } from '../config';
+import * as http from 'http';
 
 /**
  * Get port from environment and store in Express.
  */
-var port = normalizePort(process.env.PORT || serverPort);
+const port = normalizePort(process.env.PORT || serverPort);
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
-var server = http.createServer(app);
+const server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -33,23 +33,23 @@ server.on('listening', onListening);
 
 function normalizePort(val): boolean | number {
 
-  const port = parseInt(val, 10);
+  const normalizedPort = parseInt(val, 10);
 
-  if (isNaN(port)) {
+  if (isNaN(normalizedPort)) {
     // named pipe
     return val;
   }
 
-  if (port >= 0) {
+  if (normalizedPort >= 0) {
     // port number
-    return port;
+    return normalizedPort;
   }
 
   return false;
 }
 
 /**
- * Event listener for HTTP server "error" event.
+ * Event listener for HTTP server 'error' event.
  */
 
 function onError(error) {
@@ -57,7 +57,7 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
+  const bind = typeof port === 'string'
     ? 'Pipe ' + port
     : 'Port ' + port;
 
@@ -77,12 +77,12 @@ function onError(error) {
 }
 
 /**
- * Event listener for HTTP server "listening" event.
+ * Event listener for HTTP server 'listening' event.
  */
 
 function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
+  const addr = server.address();
+  const bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   console.log('Listening on ' + bind);
