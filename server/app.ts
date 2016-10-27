@@ -1,6 +1,6 @@
 import * as express from 'express';
 import { json, urlencoded } from 'body-parser';
-import { join } from 'path';
+import * as path from 'path';
 import * as cors from 'cors';
 import * as compression from 'compression';
 
@@ -29,7 +29,7 @@ app.use('/public', publicRouter);
 if (app.get('env') === 'production') {
 
   // in production mode run application from dist folder
-  app.use(express.static(join(__dirname, '/../client')));
+  app.use(express.static(path.join(__dirname, '/../client')));
 }
 
 // catch 404 and forward to error handler
