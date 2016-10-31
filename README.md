@@ -1,3 +1,6 @@
+<img style="width: 150px" src="https://i.cloudup.com/zfY6lL7eFa-3000x3000.png" />
+<img style="width: 50px" src="https://angular.io/resources/images/logos/angular2/angular.svg" />
+
 ## Angular2 Express Starter
 
 - Angular 2 ( 2.1 release )
@@ -33,7 +36,7 @@ npm run build
 
 Structure of dist folder:
 
-/server <-- expressjs
-/client <-- angular2
+/dist/server <-- expressjs
+/dist/client <-- angular2
 
 ```
