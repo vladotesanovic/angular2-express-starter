@@ -25,10 +25,10 @@ app.use(cors({
 // app.set('env', 'production');
 
 // api routes
-app.use('/api', protectedRouter);
-app.use('/login', loginRouter);
-app.use('/public', publicRouter);
-app.use('/feed', feedRouter);
+app.use('/api/secure', protectedRouter);
+app.use('/api/login', loginRouter);
+app.use('/api/public', publicRouter);
+app.use('/api/feed', feedRouter);
 
 if (app.get('env') === 'production') {
 

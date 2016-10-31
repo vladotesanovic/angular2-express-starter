@@ -7,7 +7,6 @@ import {
   REMOVE_FEED_SUCCESS
 } from './feed.actions';
 import { Http, Response } from '@angular/http';
-import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -17,7 +16,7 @@ export class FeedEffects {
   addFeed$ = this.actions$
     .ofType(ADD_FEED)
     .switchMap((action: Action) => {
-      return this.http.post(environment.server + '/feed', action.payload)
+      return this.http.post('/api/feed', action.payload)
         .catch(() => Observable.of(({ type: ADD_FEED_FAIL })))
         .map((response: Response) => response.json())
         .map((response) => ({type: ADD_FEED_SUCCESS, payload: response}));
@@ -27,7 +26,7 @@ export class FeedEffects {
   removeFeed$ = this.actions$
     .ofType(REMOVE_FEED)
     .switchMap((action: Action) => {
-      return this.http.delete(environment.server + '/feed/' + action.payload)
+      return this.http.delete('/api/feed/' + action.payload)
         .catch(() => Observable.of(({ type: REMOVE_FEED_FAIL })))
         .map((response: Response) => response.json())
         .map((response) => ({type: REMOVE_FEED_SUCCESS, payload: response}));

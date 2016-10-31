@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { environment } from '../environments/environment';
 
 import { Observable } from 'rxjs';
 
@@ -18,7 +17,7 @@ export class AppComponent {
 
   constructor(http: Http) {
     this.observable$ = http
-      .get(environment.server + '/public/simple')
+      .get('/api/public/simple')
       .map((response: Response) => response.json());
   }
 }
