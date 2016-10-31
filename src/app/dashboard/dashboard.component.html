@@ -1,0 +1,32 @@
+<h2>Dashboard component</h2>
+
+<div>
+  <div>
+    <h3>Feed</h3>
+    <div class="comment" *ngFor="let item of feeds$ | async">
+      <div>
+        <a>{{item.name}}</a>
+        <div class="text">
+          {{item.text}}
+        </div>
+        <div class="actions">
+          <a class="reply"><button class="ui button icon basic red" (click)="removeFeed(item.id)">Remove</button></a>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+
+    <form class="form" [formGroup]="form" [ngClass]="{'error': form.errors && (form.dirty || form.touched)}">
+      <div class="field" [ngClass]="{'error': form.get('name').errors && (form.get('name').dirty || form.get('name').touched)}">
+        <input placeholder="Enter name..." type="text" formControlName="name" />
+      </div>
+      <div class="field" [ngClass]="{'error': form.get('text').errors && (form.get('text').dirty || form.get('text').touched)}">
+        <textarea formControlName="text" placeholder="Enter text..."></textarea>
+      </div>
+      <button [disabled]="!form.valid" class="ui blue labeled submit icon button" (click)="submitFeed()">
+        <i class="icon edit"></i> Add Activity
+      </button>
+    </form>
+  </div>
+</div>

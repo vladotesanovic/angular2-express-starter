@@ -2,8 +2,9 @@
 
 - Angular 2 ( 2.1 release )
 - ExpressJS ( with compression )
-- jwt ( JSON Web Tokens )
 - Webpack ( angular-cli )
+- Redux ( NgRx/Store - with server calls)
+
 
 ## Install / Development
 

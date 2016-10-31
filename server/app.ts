@@ -7,6 +7,7 @@ import * as compression from 'compression';
 import { loginRouter } from './routes/login';
 import { protectedRouter } from './routes/protected';
 import { publicRouter } from './routes/public';
+import { feedRouter } from './routes/feed';
 
 const app: express.Application = express();
 
@@ -20,11 +21,14 @@ app.use(urlencoded({ extended: true }));
 app.use(cors({
   origin: 'http://localhost:4200'
 }));
-app.set('env', 'production');
+
+// app.set('env', 'production');
+
 // api routes
 app.use('/api', protectedRouter);
 app.use('/login', loginRouter);
 app.use('/public', publicRouter);
+app.use('/feed', feedRouter);
 
 if (app.get('env') === 'production') {
 

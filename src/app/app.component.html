@@ -1,7 +1,18 @@
-<h1>
-  {{title}}
-</h1>
+<div class="main">
+  <h1>
+    {{title}}
+  </h1>
 
-<code>
-  {{observable$ | async | json}}
-</code>
+  <code>
+    {{observable$ | async | json}}
+  </code>
+
+  <ul>
+    <li><a routerLink="dashboard" routerLinkActive="active">Dashboard</a></li>
+    <li><a routerLink="profile" routerLinkActive="active">Profile</a></li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>
+
+<!-- Development tools -->
+<ngrx-store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m"></ngrx-store-log-monitor>

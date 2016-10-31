@@ -1,0 +1,7 @@
+export const ADD_FEED = 'ADD_FEED';
+export const ADD_FEED_FAIL = 'ADD_FEED_FAIL';
+export const ADD_FEED_SUCCESS = 'ADD_FEED_SUCCESS';
+
+export const REMOVE_FEED = 'REMOVE_FEED';
+export const REMOVE_FEED_FAIL = 'REMOVE_FEED_FAIL';
+export const REMOVE_FEED_SUCCESS = 'REMOVE_FEED_SUCCESS';
