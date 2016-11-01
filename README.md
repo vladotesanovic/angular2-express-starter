@@ -1,5 +1,5 @@
-<img style="width: 150px" src="https://i.cloudup.com/zfY6lL7eFa-3000x3000.png" />
-<img style="width: 50px" src="https://angular.io/resources/images/logos/angular2/angular.svg" />
+<img width="150" src="https://i.cloudup.com/zfY6lL7eFa-3000x3000.png" />
+<img width="50" src="https://angular.io/resources/images/logos/angular2/angular.svg" />
 
 ## Angular2 Express Starter
 
