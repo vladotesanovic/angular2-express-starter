@@ -4,8 +4,8 @@ const publicRouter: Router = Router();
 
 publicRouter.get('/simple', (request: Request, response: Response) => {
   response.json({
-    text: 'Greetings.',
-    title: 'Public routes'
+    title: 'Greetings.',
+    text: 'Hello Angular 2'
   });
 });
 

@@ -11,7 +11,6 @@
     "test": "ng test",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor",
-    "aot": "ng build --prod --output-path=dist/client && npm run _server:build",
     "build": "ng build --prod --output-path=dist/client && npm run _server:build",
     "_server:run": "tsc -p ./server && concurrently \"tsc -w -p ./server\" \"nodemon dist/server/bin/www.js\" ",
     "_server:build": "tsc -p ./server"
