@@ -4,7 +4,7 @@
 ## Angular2 Express Starter
 
 - Angular 2 ( 2.1 release )
-- ExpressJS ( with compression )
+- ExpressJS ( 4.x - with compression )
 - Webpack ( angular-cli )
 - Redux ( NgRx/Store - with server calls)
 
@@ -28,13 +28,12 @@ npm run start
 ```
 
 ## Build / Production
-Uncomment in public/index.html:
 
 ```bash
 
 npm run build
 
-## Deploy dist server
+## Deploy dist folder to app server
 
 Structure of dist folder:
 
@@ -42,3 +41,5 @@ Structure of dist folder:
 /dist/client <-- angular2
 
 ```
+
+
