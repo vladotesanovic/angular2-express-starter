@@ -13,9 +13,13 @@
     "e2e": "protractor",
     "build": "ng build --prod --output-path=dist/client && npm run _server:build",
     "_server:run": "tsc -p ./server && concurrently \"tsc -w -p ./server\" \"nodemon dist/server/bin/www.js\" ",
-    "_server:build": "tsc -p ./server"
+    "_server:build": "tsc -p ./server",
+    "postinstall": "npm run build"
   },
   "author": "Vlado Tešanović",
+  "repository": {
+    "url": "https://github.com/vladotesanovic/angular2-express-starter"
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "~2.1.0",
@@ -44,9 +48,7 @@
     "path": "^0.12.7",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
-    "zone.js": "^0.6.23"
-  },
-  "devDependencies": {
+    "zone.js": "^0.6.23",
     "@types/body-parser": "0.0.32",
     "@types/compression": "0.0.33",
     "@types/cors": "0.0.33",
@@ -55,7 +57,7 @@
     "@types/jsonwebtoken": "^7.1.31",
     "@types/node": "^6.0.42",
     "@types/node-uuid": "0.0.28",
-    "angular-cli": "1.0.0-beta.18",
+    "angular-cli": "1.0.0-beta.19-3",
     "codelyzer": "1.0.0-beta.1",
     "concurrently": "^3.1.0",
     "jasmine-core": "2.4.1",
