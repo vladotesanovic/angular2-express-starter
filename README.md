@@ -3,12 +3,18 @@
 
 ## Angular2 Express Starter
 
-- Angular 2 ( 2.1 release )
+- Angular 2 ( stable )
 - ExpressJS ( 4.x - with compression )
 - Webpack ( angular-cli )
 - Redux ( NgRx/Store - with server calls)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+## Support
+
+You can support this project by donating on PayPal. If you have special needs or feature request, mail me.
+
+[![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://www.paypal.me/ngsemantic)
 
 
 ## Install / Development
