@@ -12,7 +12,7 @@
 
 ## Support
 
-You can support this project by donating on PayPal. If you have special needs or feature request, mail me.
+If you’d like to support me developing this project you’re able to do so by donating on PayPal or if you have any special needs/ feature requests don’t hesitate to send me an email.
 
 [![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://www.paypal.me/ngsemantic)
 
