@@ -4,13 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
-import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
-import { feedReducer } from './store/feed/feed.reducer';
 import { FeedEffects } from './store/feed/feed.effects';
+import { store } from './store';
 
 @NgModule({
   declarations: [
@@ -19,10 +18,8 @@ import { FeedEffects } from './store/feed/feed.effects';
   imports: [
     BrowserModule,
     routing,
+    store,
     FormsModule,
-    StoreModule.provideStore({
-      feed: feedReducer
-    }),
     StoreDevtoolsModule.instrumentStore({
       monitor: useLogMonitor({
         visible: true,
@@ -38,4 +35,4 @@ import { FeedEffects } from './store/feed/feed.effects';
     AppComponent
   ]
 })
-export class AppModule { }
+export class AppModule {}

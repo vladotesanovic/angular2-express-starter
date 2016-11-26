@@ -1,0 +1,50 @@
+.feed {
+  border: 2px dashed hsla(14, 100%, 53%, 0.6);
+  margin: 0px 10px;
+  padding: 10px;
+}
+
+.animation {
+  animation: fadeIn 2s;
+}
+
+.animation-comment {
+  animation: moveFromLeft 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes moveFromLeft {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.comments {
+  float: right;
+  width: 50%;
+}
+
+.comment {
+  border-bottom: 4px solid #05ffb0;
+  padding: 10px;
+}
+
+.clear {
+  clear: both;
+}
+
+.field.error > * {
+  background: lightcoral;
+}
+

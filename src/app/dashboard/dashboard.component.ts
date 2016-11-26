@@ -1,19 +1,22 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { ADD_FEED, REMOVE_FEED } from '../store/feed/feed.actions';
 import { Observable } from 'rxjs';
+
+import { ADD_FEED, REMOVE_FEED, ADD_FEED_COMMENT } from '../store/feed/feed.actions';
+import { IAppState } from "../store";
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: 'dashboard.component.html'
+  templateUrl: 'dashboard.component.html',
+  styleUrls: ['dashboard.component.css']
 })
 export class DashboardComponent {
   form: FormGroup;
 
   feeds$: Observable<{}>;
 
-  constructor(public fb: FormBuilder, public store: Store<{}>) {
+  constructor(public fb: FormBuilder, public store: Store<IAppState>) {
 
     this.feeds$ = store.select('feed');
 
@@ -21,6 +24,7 @@ export class DashboardComponent {
       text: ['', Validators.required],
       name: ['', Validators.required]
     });
+
   }
 
   submitFeed(): void {
@@ -34,6 +38,15 @@ export class DashboardComponent {
 
       this.form.reset();
     }
+  }
+
+  submitCommentOnFeed(id: string, comment: {}): void {
+
+    this.store.dispatch({
+      type: ADD_FEED_COMMENT,
+      payload: { id, comment }
+    });
+
   }
 
   removeFeed(feed: {}): void {

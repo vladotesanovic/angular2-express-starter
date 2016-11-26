@@ -13,6 +13,20 @@ feedRouter.post('/', (request: Request, response: Response) => {
 
 });
 
+feedRouter.post('/:id/comment', (request: Request, response: Response) => {
+
+  const feedID = request.params.id;
+
+  response.json({
+    id: feedID,
+    comment: {
+      id: uuid.v4(),
+      text: request.body.text
+    }
+  });
+
+});
+
 feedRouter.delete('/:id', (request: Request, response: Response) => {
 
   response.json({

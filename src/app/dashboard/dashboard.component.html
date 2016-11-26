@@ -1,32 +1,47 @@
 <h2>Dashboard component</h2>
 
-<div>
-  <div>
-    <h3>Feed</h3>
-    <div class="comment" *ngFor="let item of feeds$ | async">
-      <div>
-        <a>{{item.name}}</a>
-        <div class="text">
-          {{item.text}}
-        </div>
-        <div class="actions">
-          <a class="reply"><button class="ui button icon basic red" (click)="removeFeed(item.id)">Remove</button></a>
-        </div>
+<h3>Feeds</h3>
+<div *ngIf="!(feeds$ | async)?.length">
+  <i>No feed, add one.</i>
+</div>
+<div class="feed animation" *ngFor="let item of feeds$ | async">
+  <a>{{item.name}}</a>
+  <div class="text">
+    {{item.text}}
+  </div>
+  <div class="actions">
+    <a class="reply"><button class="ui button icon basic red" (click)="removeFeed(item.id)">Remove</button></a>
+  </div>
+  <div class="comments">
+
+    <div class="comment animation animation-comment" *ngFor="let comment of item?.comments">
+      <div class="text">
+        {{comment.text}}
       </div>
     </div>
 
-    <br/>
-
-    <form class="form" [formGroup]="form" [ngClass]="{'error': form.errors && (form.dirty || form.touched)}">
-      <div class="field" [ngClass]="{'error': form.get('name').errors && (form.get('name').dirty || form.get('name').touched)}">
-        <input placeholder="Enter name..." type="text" formControlName="name" />
+    <form class="form" #commentForm="ngForm" (submit)="submitCommentOnFeed(item.id, commentForm.value); commentForm.reset()" [ngClass]="{'error': commentForm.errors && (commentForm.dirty || commentForm.touched)}">
+      <div class="field">
+        <input placeholder="Enter comment..." type="text" name="text" required ngModel />
       </div>
-      <div class="field" [ngClass]="{'error': form.get('text').errors && (form.get('text').dirty || form.get('text').touched)}">
-        <textarea formControlName="text" placeholder="Enter text..."></textarea>
-      </div>
-      <button [disabled]="!form.valid" class="ui blue labeled submit icon button" (click)="submitFeed()">
-        <i class="icon edit"></i> Add Activity
+      <button [disabled]="!commentForm.valid" class="ui blue labeled submit icon button">
+        <i class="icon edit"></i> Add comment
       </button>
     </form>
   </div>
+  <div class="clear"></div>
 </div>
+
+<br/>
+
+<form class="form" [formGroup]="form" [ngClass]="{'error': form.errors && (form.dirty || form.touched)}">
+  <div class="field" [ngClass]="{'error': form.get('name').errors && (form.get('name').dirty || form.get('name').touched)}">
+    <input placeholder="Enter name..." type="text" formControlName="name" />
+  </div>
+  <div class="field" [ngClass]="{'error': form.get('text').errors && (form.get('text').dirty || form.get('text').touched)}">
+    <textarea formControlName="text" placeholder="Enter text..."></textarea>
+  </div>
+  <button [disabled]="!form.valid" class="ui blue labeled submit icon button" (click)="submitFeed()">
+    <i class="icon edit"></i> Add Feed
+  </button>
+</form>
