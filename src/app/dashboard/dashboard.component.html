@@ -1,9 +1,8 @@
 <h2>Dashboard component</h2>
 
 <h3>Feeds</h3>
-<div *ngIf="!(feeds$ | async)?.length">
-  <i>No feed, add one.</i>
-</div>
+<app-ui-notes *ngIf="!(feeds$ | async)?.length" type="info" text="No feed, add one."></app-ui-notes>
+
 <div class="feed animation" *ngFor="let item of feeds$ | async">
   <a>{{item.name}}</a>
   <div class="text">
@@ -20,7 +19,7 @@
       </div>
     </div>
 
-    <form class="form" #commentForm="ngForm" (submit)="submitCommentOnFeed(item.id, commentForm.value); commentForm.reset()" [ngClass]="{'error': commentForm.errors && (commentForm.dirty || commentForm.touched)}">
+    <form class="form" #commentForm="ngForm" (submit)="submitCommentOnFeed(item.id, commentForm)" [ngClass]="{'error': commentForm.errors && (commentForm.dirty || commentForm.touched)}">
       <div class="field">
         <input placeholder="Enter comment..." type="text" name="text" required ngModel />
       </div>

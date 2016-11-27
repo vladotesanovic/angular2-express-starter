@@ -1,5 +1,5 @@
 import { Action, ActionReducer } from '@ngrx/store';
-import { REMOVE_FEED_SUCCESS, ADD_FEED_SUCCESS, ADD_FEED_COMMENT_SUCCESS } from './feed.actions';
+import { FEED_REMOVE_SUCCESS, FEED_ADD_SUCCESS, FEED_ADD_COMMENT_SUCCESS } from './feed.actions';
 
 export interface IFeed {
   id: string;
@@ -12,15 +12,15 @@ export const feedReducer: ActionReducer<IFeed[]> = (state: Array<IFeed> = [], ac
 
   switch (action.type) {
 
-    case ADD_FEED_SUCCESS:
+    case FEED_ADD_SUCCESS:
 
       return [...state, action.payload];
 
-    case REMOVE_FEED_SUCCESS:
+    case FEED_REMOVE_SUCCESS:
 
       return state.filter((feed: IFeed) => action.payload.id !== feed.id);
 
-    case ADD_FEED_COMMENT_SUCCESS:
+    case FEED_ADD_COMMENT_SUCCESS:
 
       const [ feed ] = state.filter((feed: IFeed) => action.payload.id === feed.id);
       const index = state.indexOf(feed);

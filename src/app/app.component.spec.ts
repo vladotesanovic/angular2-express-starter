@@ -5,6 +5,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpModule } from '@angular/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
+import { StoreModule } from "@ngrx/store";
+import { SharedModule } from "./shared/shared.module";
 
 let component:  AppComponent;
 let fixture:    ComponentFixture<AppComponent>;
@@ -12,7 +14,7 @@ let fixture:    ComponentFixture<AppComponent>;
 describe('App: Tmp', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports:        [HttpModule, RouterTestingModule],
+      imports:        [HttpModule, RouterTestingModule, StoreModule.provideStore({}), SharedModule],
       declarations:   [AppComponent],
       providers:      [],
 
@@ -27,13 +29,4 @@ describe('App: Tmp', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'app works!'`, () => {
-    expect(component.title).toEqual('app works!');
-  });
-
-  it('should render title in a h1 tag', () => {
-    fixture.detectChanges();
-    let compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
-  });
 });

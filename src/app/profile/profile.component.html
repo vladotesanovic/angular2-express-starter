@@ -1,5 +1,9 @@
 <h2>Profile</h2>
 
+<a [routerLink]="[{outlets: { modal : 'edit'}}]" routerLinkActive="active">Edit</a>
+
 <ul>
-  <li><a [routerLink]="[{outlets: { modal : 'edit'}}]" routerLinkActive="active">Edit</a></li>
+  <li>{{(profile$ | async)?.name}}</li>
+  <li>{{(profile$ | async)?.username}}</li>
+  <li>{{(profile$ | async)?.email}}</li>
 </ul>
