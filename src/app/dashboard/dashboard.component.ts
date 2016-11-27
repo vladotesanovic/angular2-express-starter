@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { ADD_FEED, REMOVE_FEED, ADD_FEED_COMMENT } from '../store/feed/feed.actions';
-import { IAppState } from "../store";
+import { IAppState } from '../store';
 
 @Component({
   selector: 'app-dashboard',

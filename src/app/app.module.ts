@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 import { FeedEffects } from './store/feed/feed.effects';
 import { store } from './store';
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { store } from './store';
   imports: [
     BrowserModule,
     routing,
+    SharedModule,
     store,
     FormsModule,
     StoreDevtoolsModule.instrumentStore({

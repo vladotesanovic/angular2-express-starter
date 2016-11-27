@@ -1,14 +1,19 @@
 <img width="150" src="https://i.cloudup.com/zfY6lL7eFa-3000x3000.png" />
 <img width="50" src="https://angular.io/resources/images/logos/angular2/angular.svg" />
 
-## Angular2 Express Starter
+## Angular2 Express Starter ( Advanced )
 
-- Angular 2 ( stable )
+- Angular 2 ( 2.x )
 - ExpressJS ( 4.x - with compression )
 - Webpack ( angular-cli )
-- Redux ( NgRx/Store - with server calls)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+## Concepts
+
+- Redux ( NgRx/Store - with server calls)
+- Smart & dumb components
+- Advanced routing ( lazy loading, router outlets...)
 
 ## Support
 
@@ -47,5 +52,9 @@ Structure of dist folder:
 /dist/client <-- angular2
 
 ```
+
+## Note
+
+All html and css are from: http://www.w3schools.com/howto/
 
 
