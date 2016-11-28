@@ -5,8 +5,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpModule } from '@angular/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
-import { StoreModule } from "@ngrx/store";
-import { SharedModule } from "./shared/shared.module";
+import { StoreModule } from '@ngrx/store';
+import { SharedModule } from './shared/shared.module';
 
 let component:  AppComponent;
 let fixture:    ComponentFixture<AppComponent>;

@@ -1,10 +1,11 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { EditComponent } from './edit.component';
-import { SharedModule } from "../../shared/shared.module";
+import { SharedModule } from '../../shared/shared.module';
 
 describe('EditComponent', () => {
   let component: EditComponent;
@@ -13,7 +14,7 @@ describe('EditComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ EditComponent ],
-      imports: [SharedModule]
+      imports: [ SharedModule, RouterTestingModule ]
     })
     .compileComponents();
   }));
