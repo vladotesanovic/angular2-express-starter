@@ -8,8 +8,7 @@ export interface IFeed {
   comments?: Array<{}>;
 }
 
-export const feedReducer: ActionReducer<IFeed[]> = (state: Array<IFeed> = [], action: Action): IFeed[] => {
-
+export function feedReducerFunc(state: Array<IFeed> = [], action: Action): IFeed[] {
   switch (action.type) {
 
     case FEED_ADD_SUCCESS:
@@ -33,4 +32,6 @@ export const feedReducer: ActionReducer<IFeed[]> = (state: Array<IFeed> = [], ac
     default:
       return state;
   }
-};
+}
+
+export const feedReducer: ActionReducer<IFeed[]> = feedReducerFunc;
