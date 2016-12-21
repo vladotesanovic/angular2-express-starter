@@ -11,10 +11,12 @@ export interface IAppState {
   profile: IProfile;
 }
 
-const combined = combineReducers({
-  feed: feedReducer,
-  profile: profileReducer
-});
+export function combined() {
+	return combineReducers({
+		feed: feedReducer,
+		profile: profileReducer
+	});
+}
 
 export const store = StoreModule.provideStore(combined);
 

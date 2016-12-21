@@ -7,7 +7,7 @@ export interface IProfile {
   email: string;
 }
 
-export const profileReducer: ActionReducer<IProfile> = (state: IProfile, action: Action): IProfile => {
+export function profileReducerFunc(state: IProfile, action: Action): IProfile {
 
   switch (action.type) {
 
@@ -19,3 +19,5 @@ export const profileReducer: ActionReducer<IProfile> = (state: IProfile, action:
       return state;
   }
 };
+
+export const profileReducer: ActionReducer<IProfile> = profileReducerFunc;
