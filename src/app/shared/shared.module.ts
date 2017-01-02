@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { ModalComponent, ModalDirectives } from './modal/modal.component';
+import { ModalComponent, ModalDirectivesDirective } from './modal/modal.component';
 import { CommonModule } from '@angular/common';
 import { TopNavigationComponent } from './top-navigation/top-navigation.component';
 import { RouterModule } from '@angular/router';
@@ -12,7 +12,7 @@ import { NotesComponent } from './notes/notes.component';
     ModalComponent,
     TopNavigationComponent,
     SubNavigationComponent,
-    ModalDirectives,
+    ModalDirectivesDirective,
     NotesComponent
   ],
   imports: [
@@ -21,7 +21,7 @@ import { NotesComponent } from './notes/notes.component';
   ],
   exports: [
     ModalComponent,
-    ModalDirectives,
+    ModalDirectivesDirective,
     TopNavigationComponent,
     SubNavigationComponent,
     NotesComponent

@@ -13,6 +13,7 @@
 
 - Redux ( NgRx/Store - with server calls)
 - Smart & dumb components
+- AOT: Ahead-of-Time compilation
 - Advanced routing ( lazy loading, router outlets...)
 
 ## Support
@@ -37,6 +38,10 @@ npm run start
 # Client url: http://localhost:4200
 # Application ( epxress ) API: http://localhost:4300
 ```
+
+Install Redux DevTools chrome extenstion:
+
+https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
 
 ## Build / Production
 

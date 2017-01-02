@@ -15,8 +15,8 @@ export class ProfileEffects {
     .switchMap((action: Action) => {
 
       return this.http.get('/api/user', action.payload)
-        .catch(() => Observable.of(({ type: USER_GET_FAIL })))
         .map((response: Response) => response.json())
+        .catch(() => Observable.of(({ type: USER_GET_FAIL })))
         .map((response) => ({type: USER_GET_SUCCESS, payload: response}));
 
     });
