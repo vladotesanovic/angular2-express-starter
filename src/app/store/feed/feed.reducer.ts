@@ -22,7 +22,7 @@ export const feedReducer: ActionReducer<IFeed[]> = (state: Array<IFeed> = [], ac
 
     case FEED_ADD_COMMENT_SUCCESS:
 
-      const [ feed ] = state.filter((feed: IFeed) => action.payload.id === feed.id);
+      const [ feed ] = state.filter((item: IFeed) => action.payload.id === item.id);
       const index = state.indexOf(feed);
 
       feed.comments = feed.comments || [];

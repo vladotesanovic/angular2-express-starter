@@ -3,8 +3,8 @@ import { Component, OnInit, Directive, ChangeDetectionStrategy } from '@angular/
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-ui-modal',
-  templateUrl: 'modal.component.html',
-  styleUrls: ['modal.component.css']
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit {
 
@@ -16,4 +16,4 @@ export class ModalComponent implements OnInit {
 @Directive({
   selector: 'app-modal-header, app-modal-body'
 })
-export class ModalDirectives {}
+export class ModalDirectivesDirective {}

@@ -1,4 +1,4 @@
-import { StoreModule, combineReducers } from '@ngrx/store';
+import { combineReducers, ActionReducer, Action } from '@ngrx/store';
 
 import { feedReducer, IFeed } from './feed/feed.reducer';
 import { profileReducer, IProfile } from './profile/profile.reducer';
@@ -11,12 +11,16 @@ export interface IAppState {
   profile: IProfile;
 }
 
-const combined = combineReducers({
+const reducers = {
   feed: feedReducer,
   profile: profileReducer
-});
+};
 
-export const store = StoreModule.provideStore(combined);
+const productionReducer: ActionReducer<IAppState> = combineReducers(reducers);
+
+export function reducer(state: IAppState, action: Action) {
+  return productionReducer(state, action);
+}
 
 export const effects = [
   EffectsModule.run(ProfileEffects),

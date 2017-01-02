@@ -18,8 +18,8 @@ export class FeedEffects {
     .switchMap((action: Action) => {
 
       return this.http.post('/api/feed', action.payload)
-        .catch(() => Observable.of(({ type: FEED_ADD_FAIL })))
         .map((response: Response) => response.json())
+        .catch(() => Observable.of(({ type: FEED_ADD_FAIL })))
         .map((response) => ({type: FEED_ADD_SUCCESS, payload: response}));
 
     });
@@ -30,8 +30,8 @@ export class FeedEffects {
     .switchMap((action: Action) => {
 
       return this.http.post('/api/feed/' + action.payload.id + '/comment', action.payload.comment)
-        .catch(() => Observable.of(({ type: FEED_ADD_COMMENT_FAIL })))
         .map((response: Response) => response.json())
+        .catch(() => Observable.of(({ type: FEED_ADD_COMMENT_FAIL })))
         .map((response) => ({type: FEED_ADD_COMMENT_SUCCESS, payload: response}));
 
     });
@@ -42,8 +42,8 @@ export class FeedEffects {
     .switchMap((action: Action) => {
 
       return this.http.delete('/api/feed/' + action.payload)
-        .catch(() => Observable.of(({ type: FEED_REMOVE_FAIL })))
         .map((response: Response) => response.json())
+        .catch(() => Observable.of(({ type: FEED_REMOVE_FAIL })))
         .map((response) => ({type: FEED_REMOVE_SUCCESS, payload: response}));
 
     });

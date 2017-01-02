@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { StoreLogMonitorModule, useLogMonitor } from '@ngrx/store-log-monitor';
 
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
-import { store, effects } from './store';
+import { effects, reducer } from './store';
 import { SharedModule } from './shared/shared.module';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -18,16 +18,10 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     routing,
     SharedModule,
-    store,
+    StoreModule.provideStore(reducer),
     ...effects,
     FormsModule,
-    StoreDevtoolsModule.instrumentStore({
-      monitor: useLogMonitor({
-        visible: true,
-        position: 'right'
-      })
-    }),
-    StoreLogMonitorModule,
+    StoreDevtoolsModule.instrumentOnlyWithExtension(),
     HttpModule
   ],
   providers: [],

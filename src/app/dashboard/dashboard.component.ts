@@ -8,8 +8,8 @@ import { IAppState } from '../store';
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: 'dashboard.component.html',
-  styleUrls: ['dashboard.component.css']
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
   form: FormGroup;
