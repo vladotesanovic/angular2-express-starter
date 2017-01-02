@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { ProfileComponent } from './profile.component';
-import { CommonModule } from '@angular/common';
-import { routing } from './profile.routing';
+import { routing } from './profile.router';
 import { EditComponent } from './edit/edit.component';
 import { SharedModule } from '../shared/shared.module';
 

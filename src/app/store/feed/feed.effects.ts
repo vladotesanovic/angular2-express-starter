@@ -1,13 +1,13 @@
 import { Effect, Actions } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs';
 
 import {
   FEED_ADD, FEED_ADD_FAIL, FEED_ADD_SUCCESS, FEED_REMOVE, FEED_REMOVE_FAIL,
   FEED_REMOVE_SUCCESS, FEED_ADD_COMMENT, FEED_ADD_COMMENT_FAIL, FEED_ADD_COMMENT_SUCCESS
 } from './feed.actions';
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs';
 
 @Injectable()
 export class FeedEffects {

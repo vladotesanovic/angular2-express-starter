@@ -14,7 +14,9 @@ export const feedReducer: ActionReducer<IFeed[]> = (state: Array<IFeed> = [], ac
 
     case FEED_ADD_SUCCESS:
 
-      return [...state, action.payload];
+      return [...state, Object.assign({}, action.payload, {
+        comments: []
+      })];
 
     case FEED_REMOVE_SUCCESS:
 
@@ -25,10 +27,11 @@ export const feedReducer: ActionReducer<IFeed[]> = (state: Array<IFeed> = [], ac
       const [ feed ] = state.filter((item: IFeed) => action.payload.id === item.id);
       const index = state.indexOf(feed);
 
-      feed.comments = feed.comments || [];
-      feed.comments = [...feed.comments, action.payload.comment];
+      const newFeed = Object.assign({}, feed, {
+        comments: [...feed.comments, action.payload.comment]
+      });
 
-      return [...state.slice(0, index), feed, ...state.slice(index + 1)];
+      return [...state.slice(0, index), newFeed, ...state.slice(index + 1)];
 
     default:
       return state;
