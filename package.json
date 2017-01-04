@@ -61,7 +61,7 @@
     "ts-node": "1.2.1",
     "tslint": "^4.0.0",
     "typescript": "~2.0.3",
-    "zone.js": "^0.6.23"
+    "zone.js": "^0.7.2"
   },
   "devDependencies": {
     "concurrently": "^3.1.0",
