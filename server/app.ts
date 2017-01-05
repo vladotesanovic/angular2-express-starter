@@ -1,7 +1,6 @@
 import * as express from 'express';
 import { json, urlencoded } from 'body-parser';
 import * as path from 'path';
-import * as cors from 'cors';
 import * as compression from 'compression';
 
 import { loginRouter } from './routes/login';

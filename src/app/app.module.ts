@@ -2,11 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import { routing } from './app.router';
-import { effects, store } from './store';
+import { effects, store, instrumentation } from './store';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -21,8 +20,7 @@ import { SharedModule } from './shared/shared.module';
     store,
     effects,
     routing,
-    // remove this in production
-    StoreDevtoolsModule.instrumentOnlyWithExtension()
+    instrumentation
   ],
   providers: [],
   bootstrap: [

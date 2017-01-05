@@ -3,6 +3,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { ModuleWithProviders } from '@angular/core';
 import { compose } from '@ngrx/core';
 import { storeFreeze } from 'ngrx-store-freeze';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { feedReducer, IFeed } from './feed/feed.reducer';
 import { profileReducer, IProfile } from './profile/profile.reducer';
@@ -34,6 +35,7 @@ export function reducer(state: IAppState, action: Action) {
 }
 
 export const store: ModuleWithProviders = StoreModule.provideStore(reducer);
+export const instrumentation: ModuleWithProviders =  (!environment.production) ? StoreDevtoolsModule.instrumentOnlyWithExtension() : null;
 
 export const effects: ModuleWithProviders[] = [
   EffectsModule.run(ProfileEffects),
