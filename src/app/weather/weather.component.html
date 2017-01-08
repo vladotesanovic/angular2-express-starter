@@ -1,0 +1,18 @@
+<h1>Weather module</h1>
+
+<form class="form" [formGroup]="form">
+  <app-ui-input label="Longitude" placeholder="Enter longitude...." [control]="form.get('longitude')"></app-ui-input>
+  <app-ui-input label="Latitude" placeholder="Enter latitude...." [control]="form.get('latitude')"></app-ui-input>
+
+  <app-ui-button [disabled]="!form.valid"  text="Get Weather data" (click)="getWeather()"></app-ui-button>
+</form>
+
+<br/>
+
+<app-ui-notes *ngIf="!(weather$ | async)" type="info" text="Click on Get Weather data button to fetch info."></app-ui-notes>
+
+<app-ui-card *ngIf="(weather$ | async)" [title]="(weather$ | async)?.data" description="Current Weather"></app-ui-card>
+
+<app-ui-air-quality *ngIf="(weather$ | async)" [number]="(weather$ | async)?.airQuality"></app-ui-air-quality>
+
+<app-ui-card *ngIf="(weather$ | async)" title="Forecast" description="ToDo..."></app-ui-card>

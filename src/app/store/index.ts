@@ -10,17 +10,21 @@ import { profileReducer, IProfile } from './profile/profile.reducer';
 import { ProfileEffects } from './profile/profile.effects';
 import { FeedEffects } from './feed/feed.effects';
 import { environment } from '../../environments/environment';
+import { IWeather, weatherReducer } from './weather/weather.reducer';
+import { WeatherEffects } from './weather/weather.effects';
 
 // all new reducers should be define here
 export interface IAppState {
   feed: IFeed[];
   profile: IProfile;
+  weather: IWeather;
 }
 
 // all new reducers should be define here
 const reducers = {
   feed: feedReducer,
-  profile: profileReducer
+  profile: profileReducer,
+  weather: weatherReducer
 };
 
 const productionReducer: ActionReducer<IAppState> = combineReducers(reducers);
@@ -39,5 +43,6 @@ export const instrumentation: ModuleWithProviders =  (!environment.production) ?
 
 export const effects: ModuleWithProviders[] = [
   EffectsModule.run(ProfileEffects),
-  EffectsModule.run(FeedEffects)
+  EffectsModule.run(FeedEffects),
+  EffectsModule.run(WeatherEffects)
 ];

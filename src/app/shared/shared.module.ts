@@ -6,6 +6,10 @@ import { TopNavigationComponent } from './top-navigation/top-navigation.componen
 import { RouterModule } from '@angular/router';
 import { SubNavigationComponent } from './sub-navigation/sub-navigation.component';
 import { NotesComponent } from './notes/notes.component';
+import { ButtonComponent } from './button/button.component';
+import { InputComponent } from './input/input.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -13,16 +17,24 @@ import { NotesComponent } from './notes/notes.component';
     TopNavigationComponent,
     SubNavigationComponent,
     ModalDirectivesDirective,
+    CardComponent,
+    ButtonComponent,
+    InputComponent,
     NotesComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     ModalComponent,
     ModalDirectivesDirective,
     TopNavigationComponent,
+    CardComponent,
+    ButtonComponent,
+    InputComponent,
     SubNavigationComponent,
     NotesComponent
   ]

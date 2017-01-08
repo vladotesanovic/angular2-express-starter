@@ -33,14 +33,9 @@
 
 <br/>
 
-<form class="form" [formGroup]="form" [ngClass]="{'error': form.errors && (form.dirty || form.touched)}">
-  <div class="field" [ngClass]="{'error': form.get('name').errors && (form.get('name').dirty || form.get('name').touched)}">
-    <input placeholder="Enter name..." type="text" formControlName="name" />
-  </div>
-  <div class="field" [ngClass]="{'error': form.get('text').errors && (form.get('text').dirty || form.get('text').touched)}">
-    <textarea formControlName="text" placeholder="Enter text..."></textarea>
-  </div>
-  <button [disabled]="!form.valid" class="ui blue labeled submit icon button" (click)="submitFeed()">
-    <i class="icon edit"></i> Add Feed
-  </button>
+<form class="form" [formGroup]="form">
+  <app-ui-input label="Name" placeholder="Enter name...." [control]="form.get('name')"></app-ui-input>
+  <app-ui-input label="Text" placeholder="Enter text...." [control]="form.get('text')"></app-ui-input>
+
+  <app-ui-button [disabled]="!form.valid"  text="Add Feed" (click)="submitFeed()"></app-ui-button>
 </form>

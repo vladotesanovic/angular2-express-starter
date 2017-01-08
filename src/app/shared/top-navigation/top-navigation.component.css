@@ -19,7 +19,7 @@ ul.topnav li a {
 }
 
 ul.topnav li a:hover {background-color: #555;}
-
+ul.topnav li a.active {background-color: #555;}
 ul.topnav li.icon {display: none;}
 
 @media screen and (max-width:680px) {
