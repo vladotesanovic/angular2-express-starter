@@ -4,22 +4,22 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { LoaderComponent } from './loader.component';
+import { AirQualityComponent } from './air.component';
 
-describe('LoaderComponent', () => {
-  let component: LoaderComponent;
-  let fixture: ComponentFixture<LoaderComponent>;
+describe('AirQualityComponent', () => {
+  let component: AirQualityComponent;
+  let fixture: ComponentFixture<AirQualityComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoaderComponent ],
+      declarations: [ AirQualityComponent ],
       imports: [ RouterTestingModule ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoaderComponent);
+    fixture = TestBed.createComponent(AirQualityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

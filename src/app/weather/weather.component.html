@@ -2,6 +2,11 @@
 
 <app-ui-loader [visible]="(weather$ | async)?.isFetching"></app-ui-loader>
 
+<p>Load city data by clicking on it. </p>
+<app-ui-city *ngFor="let city of cities" [image]="city.image" [name]="city.name" [longitude]="city.longitude" [latitude]="city.latitude" (onSelect)="loadCity($event)"></app-ui-city>
+
+<h3>Form</h3>
+
 <form class="form" [formGroup]="form">
   <app-ui-input label="Longitude" placeholder="Enter longitude...." [control]="form.get('longitude')"></app-ui-input>
   <app-ui-input label="Latitude" placeholder="Enter latitude...." [control]="form.get('latitude')"></app-ui-input>
@@ -11,10 +16,10 @@
 
 <br/>
 
-<app-ui-notes *ngIf="!(weather$ | async)" type="info" text="Click on Get Weather data button to fetch info."></app-ui-notes>
+<app-ui-notes *ngIf="!(weather$ | async)?.data" type="info" text="Click on Get Weather data button to fetch info."></app-ui-notes>
 
 <app-ui-card *ngIf="(weather$ | async)?.data" [title]="(weather$ | async)?.data" description="Current Weather"></app-ui-card>
 
 <app-ui-air-quality *ngIf="(weather$ | async)?.airQuality" [number]="(weather$ | async)?.airQuality"></app-ui-air-quality>
 
-<app-ui-card *ngIf="(weather$ | async)?.forecast" title="Forecast" description="ToDo..."></app-ui-card>
+<app-ui-forecast *ngIf="(weather$ | async)?.forecast" [forecast]="(weather$ | async)?.forecast?.query?.results?.channel?.item?.forecast"></app-ui-forecast>

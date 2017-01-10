@@ -6,7 +6,7 @@ import { DebugElement } from '@angular/core';
 
 import { CardComponent } from './card.component';
 
-describe('InputComponent', () => {
+describe('CardComponent', () => {
   let component: CardComponent;
   let fixture: ComponentFixture<CardComponent>;
 

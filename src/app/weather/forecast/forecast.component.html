@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="container">
+    <h4><b>Forecast</b></h4>
+  </div>
+  <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Day</th>
+        <th>High</th>
+        <th>Low</th>
+        <th>Text</th>
+      </tr>
+      <tr *ngFor="let item of forecast">
+        <td>{{item?.date}}</td>
+        <td>{{item?.day}}</td>
+        <td>{{item?.high}}</td>
+        <td>{{item?.low}}</td>
+        <td>{{item?.text}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+

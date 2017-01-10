@@ -12,7 +12,7 @@
   overflow: hidden;
   cursor: pointer;
 }
-
+.button:hover {background-color: #3e8e41}
 .button:after {
   content: "";
   background: #90EE90;
@@ -25,7 +25,6 @@
   opacity: 0;
   transition: all 0.8s
 }
-
 .button:active:after {
   padding: 0;
   margin: 0;

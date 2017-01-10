@@ -7,13 +7,6 @@
   margin-bottom: 16px;
 }
 
-.air {
-  padding: 50px; color: white;
-  text-align: center;
-  background-color: grey;
-  font-weight: bold;
-}
-
 /* On mouse-over, add a deeper shadow */
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -24,28 +17,17 @@
   padding: 2px 16px;
 }
 
-.green {
-  background-color: #00e400;
-  color: black;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
 }
 
-.yellow {
-  background-color: #ffff00;
-  color: black;
+th, td {
+  border: none;
+  text-align: left;
+  padding: 8px;
 }
 
-.orange {
-  background-color: #ff7e00;
-}
-
-.red {
-  background-color: #ff0000;
-}
-
-.violet {
-  background-color: #99004c;
-}
-
-.purple {
-  background-color: #7e0023;
-}
+tr:nth-child(even){background-color: #f2f2f2}

@@ -4,22 +4,22 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { LoaderComponent } from './loader.component';
+import { ForecastComponent } from './forecast.component';
 
-describe('LoaderComponent', () => {
-  let component: LoaderComponent;
-  let fixture: ComponentFixture<LoaderComponent>;
+describe('ForecastComponent', () => {
+  let component: ForecastComponent;
+  let fixture: ComponentFixture<ForecastComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoaderComponent ],
+      declarations: [ ForecastComponent ],
       imports: [ RouterTestingModule ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoaderComponent);
+    fixture = TestBed.createComponent(ForecastComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
