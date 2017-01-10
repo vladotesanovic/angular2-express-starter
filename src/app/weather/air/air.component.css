@@ -10,6 +10,8 @@
 .air {
   padding: 50px; color: white;
   text-align: center;
+  background-color: grey;
+  font-weight: bold;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -20,6 +22,10 @@
 /* Add some padding inside the card container */
 .container {
   padding: 2px 16px;
+}
+
+.blue {
+  background-color: #00f;
 }
 
 .green {

@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { IAppState } from '../store/index';
 import { WEATHER_GET } from '../store/weather/weather.actions';
 import { Observable } from 'rxjs';
+import { IWeather } from "../store/weather/weather.reducer";
 
 @Component({
   selector: 'app-weather',
@@ -12,16 +13,15 @@ import { Observable } from 'rxjs';
 })
 export class WeatherComponent implements OnInit {
   form: FormGroup;
-
-  weather$: Observable<number>;
+  weather$: Observable<IWeather>;
 
   constructor(public fb: FormBuilder, public store: Store<IAppState>) {}
 
   ngOnInit(): void {
 
     this.form = this.fb.group({
-      'latitude': ['43.8174915', Validators.required],
-      'longitude': ['18.5318696', Validators.required]
+      'latitude': ['43.815623', Validators.required],
+      'longitude': ['18.5683106', Validators.required]
     });
 
     this.weather$ = this.store.select('weather');

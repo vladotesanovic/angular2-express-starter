@@ -10,6 +10,7 @@ import { ButtonComponent } from './button/button.component';
 import { InputComponent } from './input/input.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CardComponent } from './card/card.component';
+import { LoaderComponent } from "./loader/loader.component";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CardComponent } from './card/card.component';
     ModalDirectivesDirective,
     CardComponent,
     ButtonComponent,
+    LoaderComponent,
     InputComponent,
     NotesComponent
   ],
@@ -32,6 +34,7 @@ import { CardComponent } from './card/card.component';
     ModalComponent,
     ModalDirectivesDirective,
     TopNavigationComponent,
+    LoaderComponent,
     CardComponent,
     ButtonComponent,
     InputComponent,
