@@ -1,6 +1,6 @@
 import { combineReducers, ActionReducer, Action, StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { ModuleWithProviders } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { compose } from '@ngrx/core';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -12,6 +12,7 @@ import { FeedEffects } from './feed/feed.effects';
 import { environment } from '../../environments/environment';
 import { IWeather, weatherReducer } from './weather/weather.reducer';
 import { WeatherEffects } from './weather/weather.effects';
+import { CommonModule } from '@angular/common';
 
 // all new reducers should be define here
 export interface IAppState {
@@ -38,8 +39,19 @@ export function reducer(state: IAppState, action: Action) {
   }
 }
 
+@NgModule()
+export class DummyModule {
+
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: CommonModule
+    };
+  }
+}
+
 export const store: ModuleWithProviders = StoreModule.provideStore(reducer);
-export const instrumentation: ModuleWithProviders =  (!environment.production) ? StoreDevtoolsModule.instrumentOnlyWithExtension() : null;
+export const instrumentation: ModuleWithProviders =
+  (!environment.production) ? StoreDevtoolsModule.instrumentOnlyWithExtension() : DummyModule.forRoot();
 
 export const effects: ModuleWithProviders[] = [
   EffectsModule.run(ProfileEffects),
