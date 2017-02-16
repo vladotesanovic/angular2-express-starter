@@ -42,7 +42,7 @@ export class WeatherComponent implements OnInit {
       name: 'New York City',
       latitude: 40.730610,
       longitude: -73.935242,
-      image: 'https://media-cdn.tripadvisor.com/media/photo-s/03/9b/2d/f2/new-york-city.jpg'
+      image: 'http://www.propertyhospitality.com/wp-content/uploads/2014/10/New-York-City-Small-Business-Contracts.jpg'
     }, {
       name: 'Tokyo',
       latitude: 35.6895,

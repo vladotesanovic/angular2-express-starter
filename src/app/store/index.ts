@@ -39,7 +39,7 @@ export function reducer(state: IAppState, action: Action) {
 }
 
 export const store: ModuleWithProviders = StoreModule.provideStore(reducer);
-export const instrumentation: ModuleWithProviders =  (!environment.production) ? StoreDevtoolsModule.instrumentOnlyWithExtension() : undefined;
+export const instrumentation: ModuleWithProviders =  (!environment.production) ? StoreDevtoolsModule.instrumentOnlyWithExtension() : null;
 
 export const effects: ModuleWithProviders[] = [
   EffectsModule.run(ProfileEffects),
