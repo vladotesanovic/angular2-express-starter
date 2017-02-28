@@ -2,7 +2,10 @@ import { Effect, Actions } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/observable/of';
 
 import {
   FEED_ADD, FEED_ADD_FAIL, FEED_ADD_SUCCESS, FEED_REMOVE, FEED_REMOVE_FAIL,

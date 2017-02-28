@@ -2,7 +2,12 @@ import { Effect, Actions } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Response } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/concat';
 
 import {
   WEATHER_GET, AIR_QUALITY_GET, AIR_QUALITY_GET_SUCCESS, AIR_QUALITY_GET_FAIL,
@@ -30,8 +35,8 @@ export class WeatherEffects {
 
       return this.weatherService.getAirQualityIndex(action.payload.longitude, action.payload.latitude)
         .map((response: Response) => response.text())
-        .catch(() => Observable.of(({ type: AIR_QUALITY_GET_FAIL })))
-        .map((response) => ({type: AIR_QUALITY_GET_SUCCESS, payload: response}));
+        .map((response) => ({type: AIR_QUALITY_GET_SUCCESS, payload: response}))
+        .catch(() => Observable.of(({ type: AIR_QUALITY_GET_FAIL })));
     });
 
   @Effect()
@@ -41,8 +46,8 @@ export class WeatherEffects {
 
       return this.weatherService.getCurrentWeather(action.payload.longitude, action.payload.latitude)
         .map((response: Response) => response.text())
-        .catch(() => Observable.of(({ type: WEATHER_GET_FAIL })))
-        .map((response) => ({type: WEATHER_GET_SUCCESS, payload: response}));
+        .map((response) => ({type: WEATHER_GET_SUCCESS, payload: response}))
+        .catch(() => Observable.of(({ type: WEATHER_GET_FAIL })));
     });
 
   @Effect()
@@ -52,8 +57,8 @@ export class WeatherEffects {
 
       return this.weatherService.getWeatherData(action.payload.longitude, action.payload.latitude)
         .map((response: Response) => response.json())
-        .catch(() => Observable.of(({ type: WEATHER_DATA_GET_FAIL })))
-        .map((response) => ({type: WEATHER_DATA_GET_SUCCESS, payload: response}));
+        .map((response) => ({type: WEATHER_DATA_GET_SUCCESS, payload: response}))
+        .catch(() => Observable.of(({ type: WEATHER_DATA_GET_FAIL })));
     });
 
   constructor(private actions$: Actions, private weatherService: WeatherService) {}

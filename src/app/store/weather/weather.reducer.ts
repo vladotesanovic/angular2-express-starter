@@ -1,13 +1,16 @@
 import { Action, ActionReducer } from '@ngrx/store';
 import {
   AIR_QUALITY_GET_SUCCESS, WEATHER_GET_SUCCESS, WEATHER_DATA_GET_SUCCESS, WEATHER_GET,
-  SELECT_CITY
+  SELECT_CITY, AIR_QUALITY_GET_FAIL, WEATHER_GET_FAIL, WEATHER_DATA_GET_FAIL
 } from './weather.actions';
 
 export interface IWeather {
   data: string;
+  dataError: boolean;
   airQuality: string;
+  airQualityError: boolean;
   forecast: {};
+  forecastError: boolean;
   selected: {};
   isFetching: false;
 }
@@ -19,7 +22,10 @@ export const weatherReducer: ActionReducer<IWeather> = (state: IWeather, action:
     case WEATHER_GET:
 
       return Object.assign({}, state, {
-        isFetching: true
+        isFetching: true,
+        airQualityError: false,
+        dataError: false,
+        forecastError: false
       });
 
     case AIR_QUALITY_GET_SUCCESS:
@@ -28,16 +34,35 @@ export const weatherReducer: ActionReducer<IWeather> = (state: IWeather, action:
         airQuality: action.payload
       });
 
+    case AIR_QUALITY_GET_FAIL:
+
+      return Object.assign({}, state, {
+        airQualityError: true
+      });
+
     case WEATHER_GET_SUCCESS:
 
       return Object.assign({}, state, {
         data: action.payload
       });
 
+    case WEATHER_GET_FAIL:
+
+      return Object.assign({}, state, {
+        dataError: true
+      });
+
     case WEATHER_DATA_GET_SUCCESS:
 
       return Object.assign({}, state, {
         forecast: action.payload,
+        isFetching: false
+      });
+
+    case WEATHER_DATA_GET_FAIL:
+
+      return Object.assign({}, state, {
+        forecastError: true,
         isFetching: false
       });
 

@@ -2,7 +2,7 @@ import { Effect, Actions } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 
 import { USER_GET, USER_GET_FAIL, USER_GET_SUCCESS } from './profile.actions';
 

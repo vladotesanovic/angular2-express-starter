@@ -16,10 +16,14 @@
 
 <br/>
 
-<app-ui-notes *ngIf="!(weather$ | async)?.data" type="info" text="Click on Get Weather data button to fetch info."></app-ui-notes>
+<app-ui-notes *ngIf="!(weather$ | async)" type="info" text="Click on Get Weather data button to fetch info."></app-ui-notes>
 
 <app-ui-card *ngIf="(weather$ | async)?.data" [title]="(weather$ | async)?.data" description="Current Weather"></app-ui-card>
+<app-ui-notes *ngIf="(weather$ | async)?.dataError" type="danger" text="Error while fetching wather data"></app-ui-notes>
 
 <app-ui-air-quality *ngIf="(weather$ | async)?.airQuality" [number]="(weather$ | async)?.airQuality"></app-ui-air-quality>
+<app-ui-notes *ngIf="(weather$ | async)?.airQualityError" type="danger" text="Error while fetching qir quality"></app-ui-notes>
+
 
 <app-ui-forecast *ngIf="(weather$ | async)?.forecast" [forecast]="(weather$ | async)?.forecast?.query?.results?.channel?.item?.forecast"></app-ui-forecast>
+<app-ui-notes *ngIf="(weather$ | async)?.forecastError" type="danger" text="Error while fetching foreacast data"></app-ui-notes>
