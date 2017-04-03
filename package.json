@@ -6,10 +6,10 @@
   "license": "MIT",
   "scripts": {
     "start": "concurrently --kill-others \"ng serve --aot=true --progress=false --proxy-config proxy.conf.json\" \"npm run _server:run\"",
-    "lint": "tslint \"src/**/*.ts\"",
-    "test": "ng test --watch=false",
-    "pree2e": "webdriver-manager update",
-    "e2e": "protractor",
+    "lint:client": "ng lint",
+    "lint:server": "tslint './server/**/*.ts' -c ./server/tslint.json --fix",
+    "test:client": "ng test",
+    "e2e:client": "ng e2e",
     "build": "ng build --prod --sm=false --aot=true --output-path=dist/client && npm run _server:build",
     "_server:run": "tsc -p ./server && concurrently \"tsc -w -p ./server\" \"nodemon dist/server/bin/www.js\" ",
     "_server:build": "tsc -p ./server",
@@ -56,7 +56,7 @@
     "rxjs": "^5.1.0",
     "ts-helpers": "^1.1.2",
     "ts-node": "~3.0.2",
-    "tslint": "~5.0.0",
+    "tslint": "^4.5.1",
     "typescript": "^2.2.2",
     "uuid": "^3.0.1",
     "zone.js": "^0.8.4"
