@@ -7,5 +7,5 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
   styleUrls: ['./air.component.css']
 })
 export class AirQualityComponent {
-  @Input() number: string;
+  @Input() number: number;
 }
