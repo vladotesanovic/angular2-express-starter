@@ -59,7 +59,7 @@
     "tslint": "^4.5.1",
     "typescript": "^2.2.2",
     "uuid": "^3.0.1",
-    "zone.js": "^0.8.4"
+    "zone.js": "0.8.5"
   },
   "devDependencies": {
     "codelyzer": "~2.1.1",
