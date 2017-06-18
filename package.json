@@ -6,14 +6,18 @@
   "license": "MIT",
   "scripts": {
     "start": "concurrently --kill-others \"npm run _server:run\" \"ng serve --aot=true --progress=false --proxy-config proxy.conf.json\"",
+    "prestart": "npm run clean:dist",
     "lint:client": "ng lint",
     "lint:server": "tslint './server/**/*.ts' -c ./server/tslint.json --fix",
     "test:client": "ng test",
     "e2e:client": "ng e2e",
     "build": "ng build --prod --sm=false --aot=true --output-path=dist/client && npm run _server:build",
+    "clean": "npm cache clean && npm run rimraf -- node_modules dist",
+    "clean:dist": "npm run rimraf -- dist",
     "_server:run": "tsc -p ./server && concurrently \"tsc -w -p ./server\" \"nodemon dist/server/bin/www.js\" ",
     "_server:build": "tsc -p ./server",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "rimraf": "rimraf"
   },
   "author": "Vlado Tešanović",
   "repository": {
@@ -75,6 +79,7 @@
     "karma-remap-istanbul": "^0.2.1",
     "nodemon": "^1.11.0",
     "protractor": "~5.1.0",
+    "rimraf": "~2.6.1",
     "webdriver-manager": "10.2.5"
   }
 }
