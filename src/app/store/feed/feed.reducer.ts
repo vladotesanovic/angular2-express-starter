@@ -1,14 +1,18 @@
-import { Action, ActionReducer } from '@ngrx/store';
-import { FEED_REMOVE_SUCCESS, FEED_ADD_SUCCESS, FEED_ADD_COMMENT_SUCCESS } from './feed.actions';
+import { FEED_REMOVE_SUCCESS, FEED_ADD_SUCCESS, FEED_ADD_COMMENT_SUCCESS, Actions } from './feed.actions';
 
 export interface IFeed {
   id: string;
   text: string;
   date: string;
-  comments?: Array<{}>;
+  comments?: IFeedComment[];
 }
 
-export const feedReducer: ActionReducer<IFeed[]> = (state: Array<IFeed> = [], action: Action): IFeed[] => {
+export interface IFeedComment {
+  id: string;
+  comment: string;
+}
+
+export function feedReducer(state: IFeed[] = [], action: Actions): IFeed[] {
 
   switch (action.type) {
 
@@ -36,4 +40,4 @@ export const feedReducer: ActionReducer<IFeed[]> = (state: Array<IFeed> = [], ac
     default:
       return state;
   }
-};
+}

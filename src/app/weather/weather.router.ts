@@ -1,12 +1,9 @@
-import { RouterModule, Route } from '@angular/router';
-import { ModuleWithProviders } from '@angular/core';
+import { Route } from '@angular/router';
 import { WeatherComponent } from './weather.component';
 
-const routes: Route[] = [
+export const routes: Route[] = [
   {
     path: '',
     component: WeatherComponent
   }
 ];
-
-export const routing: ModuleWithProviders = RouterModule.forChild(routes);

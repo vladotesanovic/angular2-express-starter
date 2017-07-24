@@ -1,5 +1,4 @@
-import { Action, ActionReducer } from '@ngrx/store';
-import { USER_GET_SUCCESS } from './profile.actions';
+import { Actions, USER_GET_SUCCESS } from './profile.actions';
 
 export interface IProfile {
   name: string;
@@ -7,7 +6,7 @@ export interface IProfile {
   email: string;
 }
 
-export const profileReducer: ActionReducer<IProfile> = (state: IProfile, action: Action): IProfile => {
+export function profileReducer(state: IProfile, action: Actions): IProfile {
 
   switch (action.type) {
 
@@ -18,4 +17,4 @@ export const profileReducer: ActionReducer<IProfile> = (state: IProfile, action:
     default:
       return state;
   }
-};
+}

@@ -1,6 +1,5 @@
 import { Effect, Actions } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
-import { Action } from '@ngrx/store';
 import { Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
@@ -10,8 +9,9 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/concat';
 
 import {
-  WEATHER_GET, AIR_QUALITY_GET, AIR_QUALITY_GET_SUCCESS, AIR_QUALITY_GET_FAIL,
-  WEATHER_GET_FAIL, WEATHER_GET_SUCCESS, WEATHER_DATA_GET, WEATHER_DATA_GET_FAIL, WEATHER_DATA_GET_SUCCESS
+  WEATHER_GET, AIR_QUALITY_GET, WEATHER_DATA_GET, WeatherGet,
+  WeatherAirQuality, WeatherDataGet, WeatherAirQualitySuccess, WeatherAirQualityFail, WeatherGetSuccess, WeatherGetFail,
+  WeatherDataGetSuccess, WeatherDataGetFail
 } from './weather.actions';
 import { WeatherService } from '../../weather/weather.service';
 
@@ -21,44 +21,45 @@ export class WeatherEffects {
   @Effect()
   init$ = this.actions$
     .ofType(WEATHER_GET)
-    .mergeMap((action: Action) => {
+    .mergeMap((action: WeatherGet) => {
+
       return Observable.concat(
-        Observable.of(({ type: AIR_QUALITY_GET, payload: action.payload })),
-        Observable.of(({ type: WEATHER_DATA_GET, payload: action.payload }))
+        Observable.of(new WeatherAirQuality(action.payload)),
+        Observable.of(new WeatherDataGet(action.payload))
       );
     });
 
   @Effect()
   airQualityGet$ = this.actions$
     .ofType(AIR_QUALITY_GET)
-    .switchMap((action: Action) => {
+    .switchMap((action: WeatherAirQuality) => {
 
       return this.weatherService.getAirQualityIndex(action.payload.longitude, action.payload.latitude)
         .map((response: Response) => response.text())
-        .map((response) => ({type: AIR_QUALITY_GET_SUCCESS, payload: response}))
-        .catch(() => Observable.of(({ type: AIR_QUALITY_GET_FAIL })));
+        .map((response) => new WeatherAirQualitySuccess(response))
+        .catch((error) => Observable.of(new WeatherAirQualityFail(error)));
     });
 
   @Effect()
   weatherGet$ = this.actions$
     .ofType(WEATHER_GET)
-    .switchMap((action: Action) => {
+    .switchMap((action: WeatherGet) => {
 
       return this.weatherService.getCurrentWeather(action.payload.longitude, action.payload.latitude)
         .map((response: Response) => response.text())
-        .map((response) => ({type: WEATHER_GET_SUCCESS, payload: response}))
-        .catch(() => Observable.of(({ type: WEATHER_GET_FAIL })));
+        .map((response) => new WeatherGetSuccess(response))
+        .catch((error) => Observable.of(new WeatherGetFail(error)));
     });
 
   @Effect()
   weatherDataGet$ = this.actions$
     .ofType(WEATHER_DATA_GET)
-    .switchMap((action: Action) => {
+    .switchMap((action: WeatherDataGet) => {
 
       return this.weatherService.getWeatherData(action.payload.longitude, action.payload.latitude)
         .map((response: Response) => response.json())
-        .map((response) => ({type: WEATHER_DATA_GET_SUCCESS, payload: response}))
-        .catch(() => Observable.of(({ type: WEATHER_DATA_GET_FAIL })));
+        .map((response) => new WeatherDataGetSuccess(response))
+        .catch((error) => Observable.of(new WeatherDataGetFail(error)));
     });
 
   constructor(private actions$: Actions, private weatherService: WeatherService) {}

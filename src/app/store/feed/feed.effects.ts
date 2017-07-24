@@ -1,6 +1,5 @@
 import { Effect, Actions } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
-import { Action } from '@ngrx/store';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
@@ -8,8 +7,9 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/observable/of';
 
 import {
-  FEED_ADD, FEED_ADD_FAIL, FEED_ADD_SUCCESS, FEED_REMOVE, FEED_REMOVE_FAIL,
-  FEED_REMOVE_SUCCESS, FEED_ADD_COMMENT, FEED_ADD_COMMENT_FAIL, FEED_ADD_COMMENT_SUCCESS
+  FEED_ADD, FEED_REMOVE, FEED_ADD_COMMENT, FeedAdd, FeedAddFail,
+  FeedAddSuccess, FeedAddComment, FeedAddCommentFail, FeedAddCommentSuccess, FeedRemove, FeedRemoveFail,
+  FeedRemoveSuccess
 } from './feed.actions';
 
 @Injectable()
@@ -18,36 +18,36 @@ export class FeedEffects {
   @Effect()
   addFeed$ = this.actions$
     .ofType(FEED_ADD)
-    .switchMap((action: Action) => {
+    .switchMap((action: FeedAdd) => {
 
       return this.http.post('/api/feed', action.payload)
         .map((response: Response) => response.json())
-        .catch(() => Observable.of(({ type: FEED_ADD_FAIL })))
-        .map((response) => ({type: FEED_ADD_SUCCESS, payload: response}));
+        .catch((error) => Observable.of(new FeedAddFail(error)))
+        .map((response) => new FeedAddSuccess(response));
 
     });
 
   @Effect()
   addFeedComment$ = this.actions$
     .ofType(FEED_ADD_COMMENT)
-    .switchMap((action: Action) => {
+    .switchMap((action: FeedAddComment) => {
 
       return this.http.post('/api/feed/' + action.payload.id + '/comment', action.payload.comment)
         .map((response: Response) => response.json())
-        .catch(() => Observable.of(({ type: FEED_ADD_COMMENT_FAIL })))
-        .map((response) => ({type: FEED_ADD_COMMENT_SUCCESS, payload: response}));
+        .catch((error) => Observable.of(new FeedAddCommentFail(error)))
+        .map((response) => new FeedAddCommentSuccess(response));
 
     });
 
   @Effect()
   removeFeed$ = this.actions$
     .ofType(FEED_REMOVE)
-    .switchMap((action: Action) => {
+    .switchMap((action: FeedRemove) => {
 
       return this.http.delete('/api/feed/' + action.payload)
         .map((response: Response) => response.json())
-        .catch(() => Observable.of(({ type: FEED_REMOVE_FAIL })))
-        .map((response) => ({type: FEED_REMOVE_SUCCESS, payload: response}));
+        .catch((error) => Observable.of(new FeedRemoveFail(error)))
+        .map((response) => new FeedRemoveSuccess(response));
 
     });
 

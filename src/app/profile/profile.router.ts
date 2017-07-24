@@ -1,9 +1,8 @@
-import { RouterModule, Route } from '@angular/router';
-import { ModuleWithProviders } from '@angular/core';
+import { Route } from '@angular/router';
 import { ProfileComponent } from './profile.component';
 import { EditComponent } from './edit/edit.component';
 
-const routes: Route[] = [
+export const routes: Route[] = [
   {
     path: '',
     component: ProfileComponent
@@ -14,5 +13,3 @@ const routes: Route[] = [
     outlet: 'modal'
   }
 ];
-
-export const routing: ModuleWithProviders = RouterModule.forChild(routes);

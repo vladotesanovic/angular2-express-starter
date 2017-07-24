@@ -1,18 +1,10 @@
-import { combineReducers, ActionReducer, Action, StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { ModuleWithProviders, NgModule } from '@angular/core';
-import { compose } from '@ngrx/core';
+import { ActionReducer, ActionReducerMap } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { feedReducer, IFeed } from './feed/feed.reducer';
 import { profileReducer, IProfile } from './profile/profile.reducer';
-import { ProfileEffects } from './profile/profile.effects';
-import { FeedEffects } from './feed/feed.effects';
-import { environment } from '../../environments/environment';
 import { IWeather, weatherReducer } from './weather/weather.reducer';
-import { WeatherEffects } from './weather/weather.effects';
-import { CommonModule } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 // all new reducers should be define here
 export interface IAppState {
@@ -22,39 +14,27 @@ export interface IAppState {
 }
 
 // all new reducers should be define here
-const reducers = {
+export const reducers: ActionReducerMap<IAppState>= {
   feed: feedReducer,
   profile: profileReducer,
   weather: weatherReducer
-};
-
-const productionReducer: ActionReducer<IAppState> = combineReducers(reducers);
-const developmentReducer: ActionReducer<IAppState> = compose(storeFreeze, combineReducers)(reducers);
-
-export function reducer(state: IAppState, action: Action) {
-  if (environment.production) {
-    return productionReducer(state, action);
-  } else {
-    return developmentReducer(state, action);
-  }
 }
 
-@NgModule()
-export class DummyModule {
+// console.log all actions
+export function logger(reducer: ActionReducer<IAppState>): ActionReducer<any, any> {
+  return function(state: IAppState, action: any): IAppState {
+    console.log('state', state);
+    console.log('action', action);
 
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CommonModule
-    };
-  }
+    return reducer(state, action);
+  };
 }
 
-export const store: ModuleWithProviders = StoreModule.provideStore(reducer);
-export const instrumentation: ModuleWithProviders =
-  (!environment.production) ? StoreDevtoolsModule.instrumentOnlyWithExtension() : DummyModule.forRoot();
-
-export const effects: ModuleWithProviders[] = [
-  EffectsModule.run(ProfileEffects),
-  EffectsModule.run(FeedEffects),
-  EffectsModule.run(WeatherEffects)
-];
+/**
+ * By default, @ngrx/store uses combineReducers with the reducer map to compose
+ * the root meta-reducer. To add more meta-reducers, provide an array of meta-reducers
+ * that will be composed to form the root meta-reducer.
+ */
+export const metaReducers: ActionReducer<any, any>[] = !environment.production
+  ? [logger]
+  : [];

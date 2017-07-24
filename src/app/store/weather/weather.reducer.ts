@@ -1,7 +1,6 @@
-import { Action, ActionReducer } from '@ngrx/store';
 import {
   AIR_QUALITY_GET_SUCCESS, WEATHER_GET_SUCCESS, WEATHER_DATA_GET_SUCCESS, WEATHER_GET,
-  SELECT_CITY, AIR_QUALITY_GET_FAIL, WEATHER_GET_FAIL, WEATHER_DATA_GET_FAIL
+  SELECT_CITY, AIR_QUALITY_GET_FAIL, WEATHER_GET_FAIL, WEATHER_DATA_GET_FAIL, Actions
 } from './weather.actions';
 
 export interface IWeather {
@@ -15,7 +14,7 @@ export interface IWeather {
   isFetching: false;
 }
 
-export const weatherReducer: ActionReducer<IWeather> = (state: IWeather, action: Action): IWeather => {
+export function weatherReducer(state: IWeather, action: Actions): IWeather {
 
   switch (action.type) {
 
@@ -75,4 +74,4 @@ export const weatherReducer: ActionReducer<IWeather> = (state: IWeather, action:
     default:
       return state;
   }
-};
+}
