@@ -1,5 +1,5 @@
 <img width="150" src="https://i.cloudup.com/zfY6lL7eFa-3000x3000.png" />
-<img width="50" src="https://angular.io/resources/images/logos/angular/angular.svg" />
+<img width="50" src="https://angular.io/assets/images/logos/angular/angular.svg" />
 
 ## Angular2+ Express Starter ( Advanced )
 
