@@ -1,9 +1,9 @@
 <img width="150" src="https://i.cloudup.com/zfY6lL7eFa-3000x3000.png" />
 <img width="50" src="https://angular.io/resources/images/logos/angular/angular.svg" />
 
-## Angular2 Express Starter ( Advanced )
+## Angular2+ Express Starter ( Advanced )
 
-- Angular 2 ( 2.x )
+- Angular 2+ ( 4.x )
 - ExpressJS ( 4.x - with compression )
 - Webpack ( angular-cli )
 
@@ -15,13 +15,6 @@
 - Smart & dumb components
 - AOT: Ahead-of-Time compilation
 - Advanced routing ( lazy loading, router outlets...)
-
-## Support
-
-If you’d like to support me developing this project you’re able to do so by donating on PayPal or if you have any special needs/ feature requests don’t hesitate to send me an email.
-
-[![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://www.paypal.me/ngsemantic)
-
 
 ## Install / Development
 

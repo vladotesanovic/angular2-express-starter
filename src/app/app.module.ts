@@ -8,7 +8,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import { routes } from './app.router';
-import { reducers } from './store';
+import { metaReducers, reducers } from './store';
 import { SharedModule } from './shared/shared.module';
 import { WeatherService } from './weather/weather.service';
 import { WeatherEffects } from './store/weather/weather.effects';
@@ -26,7 +26,7 @@ import { RouterModule } from '@angular/router';
     SharedModule,
     FormsModule,
     HttpModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([
       ProfileEffects,
       FeedEffects,
