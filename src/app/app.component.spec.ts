@@ -14,7 +14,7 @@ let fixture:    ComponentFixture<AppComponent>;
 describe('App: Tmp', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports:        [HttpModule, RouterTestingModule, StoreModule.provideStore({}), SharedModule],
+      imports:        [HttpModule, RouterTestingModule, StoreModule.forRoot({}), SharedModule],
       declarations:   [AppComponent],
       providers:      [],
 

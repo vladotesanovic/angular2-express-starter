@@ -35,7 +35,7 @@ describe('WeatherComponent', () => {
       ],
       imports: [
         RouterTestingModule,
-        StoreModule.provideStore({}),
+        StoreModule.forRoot({}),
         FormsModule,
         ReactiveFormsModule
       ]
