@@ -1,4 +1,4 @@
-import { ActionReducer, ActionReducerMap } from '@ngrx/store';
+import { ActionReducer, ActionReducerMap, MetaReducer } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 
 import { feedReducer, IFeed } from './feed/feed.reducer';
@@ -35,6 +35,6 @@ export function logger(reducer: ActionReducer<IAppState>): ActionReducer<any, an
  * the root meta-reducer. To add more meta-reducers, provide an array of meta-reducers
  * that will be composed to form the root meta-reducer.
  */
-export const metaReducers: ActionReducer<any, any>[] = !environment.production
+export const metaReducers: MetaReducer<IAppState>[] = !environment.production
   ? [logger, storeFreeze]
   : [];
