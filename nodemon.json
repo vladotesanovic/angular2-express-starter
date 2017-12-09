@@ -2,16 +2,15 @@
   "verbose": false,
   "ignore": [
     ".git",
-    "node_modules/**/node_modules"
+    "node_modules/**/node_modules",
+    "server/**/*.spec.ts"
   ],
-  "execMap": {
-    "js": "node"
-  },
   "watch": [
-    "dist/server"
+    "server/**/*.ts"
   ],
   "env": {
     "NODE_ENV": "development"
   },
-  "ext": "js json"
+  "ext": "ts",
+  "exec": "ts-node ./server/bin/www.ts"
 }

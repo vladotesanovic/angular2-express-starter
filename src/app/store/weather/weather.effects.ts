@@ -1,6 +1,5 @@
 import { Effect, Actions } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
-import { Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/switchMap';
@@ -35,8 +34,7 @@ export class WeatherEffects {
     .switchMap((action: WeatherAirQuality) => {
 
       return this.weatherService.getAirQualityIndex(action.payload.longitude, action.payload.latitude)
-        .map((response: Response) => response.text())
-        .map((response) => new WeatherAirQualitySuccess(response))
+        .map((response: any) => new WeatherAirQualitySuccess(response))
         .catch((error) => Observable.of(new WeatherAirQualityFail(error)));
     });
 
@@ -46,8 +44,7 @@ export class WeatherEffects {
     .switchMap((action: WeatherGet) => {
 
       return this.weatherService.getCurrentWeather(action.payload.longitude, action.payload.latitude)
-        .map((response: Response) => response.text())
-        .map((response) => new WeatherGetSuccess(response))
+        .map((response: any) => new WeatherGetSuccess(response))
         .catch((error) => Observable.of(new WeatherGetFail(error)));
     });
 
@@ -57,8 +54,7 @@ export class WeatherEffects {
     .switchMap((action: WeatherDataGet) => {
 
       return this.weatherService.getWeatherData(action.payload.longitude, action.payload.latitude)
-        .map((response: Response) => response.json())
-        .map((response) => new WeatherDataGetSuccess(response))
+        .map((response: any) => new WeatherDataGetSuccess(response))
         .catch((error) => Observable.of(new WeatherDataGetFail(error)));
     });
 

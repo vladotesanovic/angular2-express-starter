@@ -1,9 +1,9 @@
-<h1>Weather module</h1>
+<h1 class="heading">Weather module</h1>
 
 <app-ui-loader [visible]="(weather$ | async)?.isFetching"></app-ui-loader>
 
 <p>Load city data by clicking on it. </p>
-<app-ui-city *ngFor="let city of cities" [image]="city.image" [name]="city.name" [longitude]="city.longitude" [latitude]="city.latitude" (onSelect)="loadCity($event)"></app-ui-city>
+<app-ui-city *ngFor="let city of cities" [image]="city.image" [name]="city.name" [longitude]="city.longitude" [latitude]="city.latitude" (select)="loadCity($event)"></app-ui-city>
 
 <h3>Form</h3>
 

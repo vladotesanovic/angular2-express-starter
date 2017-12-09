@@ -14,11 +14,11 @@ export interface IAppState {
 }
 
 // all new reducers should be define here
-export const reducers: ActionReducerMap<IAppState>= {
+export const reducers: ActionReducerMap<IAppState> = {
   feed: feedReducer,
   profile: profileReducer,
   weather: weatherReducer
-}
+};
 
 // console.log all actions
 export function logger(reducer: ActionReducer<IAppState>): ActionReducer<any, any> {

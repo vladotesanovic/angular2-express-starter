@@ -1,29 +1,31 @@
-import { Component } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { Store } from '@ngrx/store';
-import { IAppState } from './store/index';
+import { IAppState } from './store';
 import { USER_GET } from './store/profile/profile.actions';
+import { ISimpleResponse } from './shared/interfaces/simple.interface';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  observable$: Observable<{}>;
+  observable$: Observable<ISimpleResponse>;
 
-  constructor(http: Http, store: Store<IAppState>) {
-    this.observable$ = http
-      .get('/api/public/simple')
-      .map((response: Response) => response.json());
+  constructor(private http: HttpClient, private store: Store<IAppState>) {}
 
-    store.dispatch({
+  ngOnInit() {
+
+    this.observable$ = this.http.get<ISimpleResponse>('/api/public/simple');
+
+    this.store.dispatch({
       type: USER_GET
     });
   }

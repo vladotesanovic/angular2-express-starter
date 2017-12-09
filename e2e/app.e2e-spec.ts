@@ -1,14 +1,14 @@
-import { TmpPage } from './app.po';
+import { AppPage } from './app.po';
 
-describe('tmp App', function() {
-  let page: TmpPage;
+describe('Angular2-express-starter App', () => {
+  let page: AppPage;
 
   beforeEach(() => {
-    page = new TmpPage();
+    page = new AppPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display title Weather module', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Weather module');
   });
 });

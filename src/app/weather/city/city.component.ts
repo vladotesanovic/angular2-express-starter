@@ -11,5 +11,5 @@ export class CityComponent {
   @Input() image: string;
   @Input() longitude: number;
   @Input() latitude: number;
-  @Output('onSelect') onSelect: EventEmitter<{}> = new EventEmitter<{}>();
+  @Output('select') select: EventEmitter<{}> = new EventEmitter<{}>();
 }

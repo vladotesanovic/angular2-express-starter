@@ -2,10 +2,11 @@
 
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
+
+import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 
 let component:  AppComponent;
@@ -14,7 +15,7 @@ let fixture:    ComponentFixture<AppComponent>;
 describe('App: Tmp', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports:        [HttpModule, RouterTestingModule, StoreModule.forRoot({}), SharedModule],
+      imports:        [HttpClientModule, RouterTestingModule, StoreModule.forRoot({}), SharedModule],
       declarations:   [AppComponent],
       providers:      [],
 
