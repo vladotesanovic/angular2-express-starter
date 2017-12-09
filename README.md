@@ -62,7 +62,7 @@ All html and css are from: http://www.w3schools.com/howto/
         <li>INNOVIC doo</li>
         <li>Software consulting company for building full stack solutions.</li>
         <li>Proficient in: NodeJS, TypeScript, Angular, MongoDB...</li>
-        <li><b>hello@innovic.io</b></li>
+        <li><b>You have project for us? hello@innovic.io</b></li>
       </ul>
     </td>
   </tr>
