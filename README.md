@@ -1,6 +1,18 @@
 <img width="150" src="https://i.cloudup.com/zfY6lL7eFa-3000x3000.png" />
 <img width="50" src="https://angular.io/assets/images/logos/angular/angular.svg" />
-
+<table style="border: 0">
+  <tr>
+    <td><img width="200" src="http://www.innovic.io/favicon.png" /></td>
+    <td>
+      <ul>
+        <li>INNOVIC doo</li>
+        <li>Software consulting company for building full stack solutions.</li>
+        <li>Proficient in: NodeJS, TypeScript, Angular, MongoDB...</li>
+        <li><b>hello@innovic.io</b></li>
+      </ul>
+    </td>
+  </tr>
+</table>
 ## Angular4+ Express Starter ( Advanced )
 
 - Angular 5+
