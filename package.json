@@ -16,6 +16,10 @@
     "postinstall": "npm run build"
   },
   "author": "Vlado Tešanović",
+  "engines": {
+    "node": "8.9.1",
+    "npm": "5.2.0"
+  },
   "repository": {
     "url": "https://github.com/vladotesanovic/angular2-express-starter"
   },
