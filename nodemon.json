@@ -12,5 +12,5 @@
     "NODE_ENV": "development"
   },
   "ext": "ts",
-  "exec": "ts-node ./server/bin/www.ts"
+  "exec": "ts-node $NODE_DEBUG_OPTION ./server/bin/www.ts"
 }
