@@ -1,9 +1,11 @@
 import { Effect, Actions } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 import { USER_GET, UserGet, UserGetFail, UserGetSuccess } from './profile.actions';
+import { catchError, map } from '../../../../node_modules/rxjs/operators';
 
 @Injectable()
 export class ProfileEffects {
@@ -11,12 +13,20 @@ export class ProfileEffects {
   @Effect()
   userGet$ = this.actions$
     .ofType(USER_GET)
-    .switchMap((action: UserGet) => {
+    .pipe(
 
-      return this.http.get<any>('/api/user')
-        .catch((error) => Observable.of(new UserGetFail(error)))
-        .map((response: any) => new UserGetSuccess(response));
-    });
+      switchMap((action: UserGet) => {
+
+        return this.http.get<any>('/api/user')
+        .pipe(
+          map((response: any) => new UserGetSuccess(response)),
+          catchError((error) => of(new UserGetFail(error)))
+        );
+      })
+
+    );
+
+
 
   constructor(private actions$: Actions, private http: HttpClient) {}
 }

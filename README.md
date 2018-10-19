@@ -28,6 +28,9 @@ npm install
 # start server
 npm run start
 
+# Troubleshooting
+If you encounter web-pack related issues when building/running, see [this StackOverflow answer](https://stackoverflow.com/a/46812648/10139616)
+
 # Client url: http://localhost:4200
 # Application ( epxress ) API: http://localhost:4300
 ```
