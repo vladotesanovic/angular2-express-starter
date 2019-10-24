@@ -8,7 +8,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ViewChild, ElementRef } fro
 })
 export class TopNavigationComponent implements OnInit {
 
-  @ViewChild('topnav') topnav: ElementRef;
+  @ViewChild('topnav', {static: false}) topnav: ElementRef;
 
   constructor() { }
 
